@@ -1,0 +1,3205 @@
+  [
+  {
+    "id": 11,
+    "admission_id": 5,
+    "name": "HSA tất cả các đợt năm 2025",
+    "scores": [
+      {
+        "from": 31,
+        "to": 36,
+        "number": 120
+      },
+      {
+        "from": 37,
+        "to": 42,
+        "number": 380
+      },
+      {
+        "from": 43,
+        "to": 48,
+        "number": 850
+      },
+      {
+        "from": 49,
+        "to": 54,
+        "number": 1950
+      },
+      {
+        "from": 55,
+        "to": 60,
+        "number": 3800
+      },
+      {
+        "from": 61,
+        "to": 66,
+        "number": 6200
+      },
+      {
+        "from": 67,
+        "to": 72,
+        "number": 8500
+      },
+      {
+        "from": 73,
+        "to": 78,
+        "number": 12800
+      },
+      {
+        "from": 79,
+        "to": 84,
+        "number": 14500
+      },
+      {
+        "from": 85,
+        "to": 90,
+        "number": 12200
+      },
+      {
+        "from": 91,
+        "to": 96,
+        "number": 9800
+      },
+      {
+        "from": 97,
+        "to": 102,
+        "number": 7600
+      },
+      {
+        "from": 103,
+        "to": 108,
+        "number": 5400
+      },
+      {
+        "from": 109,
+        "to": 114,
+        "number": 2800
+      },
+      {
+        "from": 115,
+        "to": 120,
+        "number": 1200
+      },
+      {
+        "from": 121,
+        "to": 126,
+        "number": 650
+      },
+      {
+        "from": 127,
+        "to": 130,
+        "number": 105
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/diemthi/ts247/images/18hsa-2.jpg",
+    "status": 1,
+    "created_at": "2025-05-29T14:46:32.000Z",
+    "updated_at": "2025-05-29T14:47:57.000Z",
+    "admission_name": "Điểm ĐGNL HN"
+  },
+  {
+    "id": 7,
+    "admission_id": 5,
+    "name": "HSA đợt 501-502 năm 2025",
+    "scores": [
+      {
+        "from": 38,
+        "to": 39,
+        "number": 9
+      },
+      {
+        "from": 39,
+        "to": 40,
+        "number": 10
+      },
+      {
+        "from": 40,
+        "to": 41,
+        "number": 12
+      },
+      {
+        "from": 41,
+        "to": 42,
+        "number": 13
+      },
+      {
+        "from": 42,
+        "to": 43,
+        "number": 11
+      },
+      {
+        "from": 43,
+        "to": 44,
+        "number": 22
+      },
+      {
+        "from": 44,
+        "to": 45,
+        "number": 16
+      },
+      {
+        "from": 45,
+        "to": 46,
+        "number": 33
+      },
+      {
+        "from": 46,
+        "to": 47,
+        "number": 50
+      },
+      {
+        "from": 47,
+        "to": 48,
+        "number": 45
+      },
+      {
+        "from": 48,
+        "to": 49,
+        "number": 55
+      },
+      {
+        "from": 49,
+        "to": 50,
+        "number": 71
+      },
+      {
+        "from": 50,
+        "to": 51,
+        "number": 97
+      },
+      {
+        "from": 51,
+        "to": 52,
+        "number": 107
+      },
+      {
+        "from": 52,
+        "to": 53,
+        "number": 125
+      },
+      {
+        "from": 53,
+        "to": 54,
+        "number": 153
+      },
+      {
+        "from": 54,
+        "to": 55,
+        "number": 184
+      },
+      {
+        "from": 55,
+        "to": 56,
+        "number": 221
+      },
+      {
+        "from": 56,
+        "to": 57,
+        "number": 228
+      },
+      {
+        "from": 57,
+        "to": 58,
+        "number": 277
+      },
+      {
+        "from": 58,
+        "to": 59,
+        "number": 300
+      },
+      {
+        "from": 59,
+        "to": 60,
+        "number": 352
+      },
+      {
+        "from": 60,
+        "to": 61,
+        "number": 388
+      },
+      {
+        "from": 61,
+        "to": 62,
+        "number": 402
+      },
+      {
+        "from": 62,
+        "to": 63,
+        "number": 406
+      },
+      {
+        "from": 63,
+        "to": 64,
+        "number": 455
+      },
+      {
+        "from": 64,
+        "to": 65,
+        "number": 527
+      },
+      {
+        "from": 65,
+        "to": 66,
+        "number": 545
+      },
+      {
+        "from": 66,
+        "to": 67,
+        "number": 567
+      },
+      {
+        "from": 67,
+        "to": 68,
+        "number": 577
+      },
+      {
+        "from": 68,
+        "to": 69,
+        "number": 632
+      },
+      {
+        "from": 69,
+        "to": 70,
+        "number": 665
+      },
+      {
+        "from": 70,
+        "to": 71,
+        "number": 748
+      },
+      {
+        "from": 71,
+        "to": 72,
+        "number": 728
+      },
+      {
+        "from": 72,
+        "to": 73,
+        "number": 760
+      },
+      {
+        "from": 73,
+        "to": 74,
+        "number": 748
+      },
+      {
+        "from": 74,
+        "to": 75,
+        "number": 738
+      },
+      {
+        "from": 75,
+        "to": 76,
+        "number": 776
+      },
+      {
+        "from": 76,
+        "to": 77,
+        "number": 750
+      },
+      {
+        "from": 77,
+        "to": 78,
+        "number": 741
+      },
+      {
+        "from": 78,
+        "to": 79,
+        "number": 755
+      },
+      {
+        "from": 79,
+        "to": 80,
+        "number": 765
+      },
+      {
+        "from": 80,
+        "to": 81,
+        "number": 814
+      },
+      {
+        "from": 81,
+        "to": 82,
+        "number": 759
+      },
+      {
+        "from": 82,
+        "to": 83,
+        "number": 760
+      },
+      {
+        "from": 83,
+        "to": 84,
+        "number": 758
+      },
+      {
+        "from": 84,
+        "to": 85,
+        "number": 809
+      },
+      {
+        "from": 85,
+        "to": 86,
+        "number": 749
+      },
+      {
+        "from": 86,
+        "to": 87,
+        "number": 732
+      },
+      {
+        "from": 87,
+        "to": 88,
+        "number": 665
+      },
+      {
+        "from": 88,
+        "to": 89,
+        "number": 710
+      },
+      {
+        "from": 89,
+        "to": 90,
+        "number": 644
+      },
+      {
+        "from": 90,
+        "to": 91,
+        "number": 645
+      },
+      {
+        "from": 91,
+        "to": 92,
+        "number": 611
+      },
+      {
+        "from": 92,
+        "to": 93,
+        "number": 579
+      },
+      {
+        "from": 93,
+        "to": 94,
+        "number": 547
+      },
+      {
+        "from": 94,
+        "to": 95,
+        "number": 559
+      },
+      {
+        "from": 95,
+        "to": 96,
+        "number": 489
+      },
+      {
+        "from": 96,
+        "to": 97,
+        "number": 489
+      },
+      {
+        "from": 97,
+        "to": 98,
+        "number": 475
+      },
+      {
+        "from": 98,
+        "to": 99,
+        "number": 450
+      },
+      {
+        "from": 99,
+        "to": 100,
+        "number": 375
+      },
+      {
+        "from": 100,
+        "to": 101,
+        "number": 360
+      },
+      {
+        "from": 101,
+        "to": 102,
+        "number": 320
+      },
+      {
+        "from": 102,
+        "to": 103,
+        "number": 320
+      },
+      {
+        "from": 103,
+        "to": 104,
+        "number": 274
+      },
+      {
+        "from": 104,
+        "to": 105,
+        "number": 243
+      },
+      {
+        "from": 105,
+        "to": 106,
+        "number": 229
+      },
+      {
+        "from": 106,
+        "to": 107,
+        "number": 224
+      },
+      {
+        "from": 107,
+        "to": 108,
+        "number": 192
+      },
+      {
+        "from": 108,
+        "to": 109,
+        "number": 155
+      },
+      {
+        "from": 109,
+        "to": 110,
+        "number": 129
+      },
+      {
+        "from": 110,
+        "to": 111,
+        "number": 118
+      },
+      {
+        "from": 111,
+        "to": 112,
+        "number": 114
+      },
+      {
+        "from": 112,
+        "to": 113,
+        "number": 83
+      },
+      {
+        "from": 113,
+        "to": 114,
+        "number": 58
+      },
+      {
+        "from": 114,
+        "to": 115,
+        "number": 48
+      },
+      {
+        "from": 115,
+        "to": 116,
+        "number": 52
+      },
+      {
+        "from": 116,
+        "to": 117,
+        "number": 38
+      },
+      {
+        "from": 117,
+        "to": 118,
+        "number": 33
+      },
+      {
+        "from": 118,
+        "to": 119,
+        "number": 35
+      },
+      {
+        "from": 119,
+        "to": 120,
+        "number": 28
+      },
+      {
+        "from": 120,
+        "to": 121,
+        "number": 16
+      },
+      {
+        "from": 121,
+        "to": 122,
+        "number": 11
+      },
+      {
+        "from": 122,
+        "to": 123,
+        "number": 10
+      },
+      {
+        "from": 123,
+        "to": 124,
+        "number": 8
+      },
+      {
+        "from": 124,
+        "to": 125,
+        "number": 3
+      },
+      {
+        "from": 125,
+        "to": 126,
+        "number": 3
+      },
+      {
+        "from": 126,
+        "to": 127,
+        "number": 5
+      },
+      {
+        "from": 127,
+        "to": 150,
+        "number": 1
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/2025/0402/pho-diem-hsa-dot-501-502.png",
+    "status": 1,
+    "created_at": "2025-04-02T09:02:14.000Z",
+    "updated_at": null,
+    "admission_name": "Điểm ĐGNL HN"
+  },
+  {
+    "id": 3,
+    "admission_id": 5,
+    "name": "HSA đợt 401 - 406 năm 2024",
+    "scores": [
+      {
+        "from": 16,
+        "to": 20,
+        "number": 1
+      },
+      {
+        "from": 21,
+        "to": 25,
+        "number": 2
+      },
+      {
+        "from": 26,
+        "to": 30,
+        "number": 3
+      },
+      {
+        "from": 31,
+        "to": 35,
+        "number": 3
+      },
+      {
+        "from": 36,
+        "to": 40,
+        "number": 51
+      },
+      {
+        "from": 41,
+        "to": 45,
+        "number": 325
+      },
+      {
+        "from": 46,
+        "to": 50,
+        "number": 1259
+      },
+      {
+        "from": 51,
+        "to": 55,
+        "number": 3210
+      },
+      {
+        "from": 56,
+        "to": 60,
+        "number": 6091
+      },
+      {
+        "from": 61,
+        "to": 65,
+        "number": 9790
+      },
+      {
+        "from": 66,
+        "to": 70,
+        "number": 12930
+      },
+      {
+        "from": 71,
+        "to": 75,
+        "number": 14941
+      },
+      {
+        "from": 76,
+        "to": 80,
+        "number": 14389
+      },
+      {
+        "from": 81,
+        "to": 85,
+        "number": 12645
+      },
+      {
+        "from": 86,
+        "to": 90,
+        "number": 9695
+      },
+      {
+        "from": 91,
+        "to": 95,
+        "number": 6745
+      },
+      {
+        "from": 96,
+        "to": 100,
+        "number": 4219
+      },
+      {
+        "from": 101,
+        "to": 105,
+        "number": 2320
+      },
+      {
+        "from": 106,
+        "to": 110,
+        "number": 1120
+      },
+      {
+        "from": 111,
+        "to": 115,
+        "number": 350
+      },
+      {
+        "from": 116,
+        "to": 120,
+        "number": 115
+      },
+      {
+        "from": 121,
+        "to": 125,
+        "number": 31
+      },
+      {
+        "from": 126,
+        "to": 130,
+        "number": 4
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/2025/0108/hsa-tat-ca-cac-dot.jpg",
+    "status": 1,
+    "created_at": "2024-12-04T15:15:23.000Z",
+    "updated_at": null,
+    "admission_name": "Điểm ĐGNL HN"
+  },
+  {
+    "id": 13,
+    "admission_id": 2,
+    "name": "Năm 2025 cả 2 đợt",
+    "scores": [
+      {
+        "from": 999,
+        "to": 1122,
+        "number": 1528
+      },
+      {
+        "from": 975,
+        "to": 999,
+        "number": 1528
+      },
+      {
+        "from": 958,
+        "to": 975,
+        "number": 1528
+      },
+      {
+        "from": 944,
+        "to": 958,
+        "number": 1528
+      },
+      {
+        "from": 933,
+        "to": 944,
+        "number": 1528
+      },
+      {
+        "from": 923,
+        "to": 933,
+        "number": 1528
+      },
+      {
+        "from": 913,
+        "to": 923,
+        "number": 1528
+      },
+      {
+        "from": 903,
+        "to": 913,
+        "number": 1528
+      },
+      {
+        "from": 895,
+        "to": 903,
+        "number": 1528
+      },
+      {
+        "from": 886,
+        "to": 895,
+        "number": 1528
+      },
+      {
+        "from": 878,
+        "to": 886,
+        "number": 1528
+      },
+      {
+        "from": 871,
+        "to": 878,
+        "number": 1528
+      },
+      {
+        "from": 863,
+        "to": 871,
+        "number": 1528
+      },
+      {
+        "from": 856,
+        "to": 863,
+        "number": 1528
+      },
+      {
+        "from": 850,
+        "to": 856,
+        "number": 1528
+      },
+      {
+        "from": 843,
+        "to": 850,
+        "number": 1528
+      },
+      {
+        "from": 836,
+        "to": 843,
+        "number": 1528
+      },
+      {
+        "from": 829,
+        "to": 836,
+        "number": 1528
+      },
+      {
+        "from": 822,
+        "to": 829,
+        "number": 1528
+      },
+      {
+        "from": 816,
+        "to": 822,
+        "number": 1528
+      },
+      {
+        "from": 810,
+        "to": 816,
+        "number": 1528
+      },
+      {
+        "from": 803,
+        "to": 810,
+        "number": 1528
+      },
+      {
+        "from": 797,
+        "to": 803,
+        "number": 1528
+      },
+      {
+        "from": 791,
+        "to": 797,
+        "number": 1528
+      },
+      {
+        "from": 785,
+        "to": 791,
+        "number": 1528
+      },
+      {
+        "from": 779,
+        "to": 785,
+        "number": 1528
+      },
+      {
+        "from": 773,
+        "to": 779,
+        "number": 1528
+      },
+      {
+        "from": 767,
+        "to": 773,
+        "number": 1528
+      },
+      {
+        "from": 761,
+        "to": 767,
+        "number": 1528
+      },
+      {
+        "from": 756,
+        "to": 761,
+        "number": 1528
+      },
+      {
+        "from": 750,
+        "to": 756,
+        "number": 1528
+      },
+      {
+        "from": 744,
+        "to": 750,
+        "number": 1528
+      },
+      {
+        "from": 739,
+        "to": 744,
+        "number": 1528
+      },
+      {
+        "from": 733,
+        "to": 739,
+        "number": 1528
+      },
+      {
+        "from": 728,
+        "to": 733,
+        "number": 1528
+      },
+      {
+        "from": 723,
+        "to": 728,
+        "number": 1528
+      },
+      {
+        "from": 717,
+        "to": 723,
+        "number": 1528
+      },
+      {
+        "from": 712,
+        "to": 717,
+        "number": 1528
+      },
+      {
+        "from": 707,
+        "to": 712,
+        "number": 1528
+      },
+      {
+        "from": 702,
+        "to": 707,
+        "number": 1528
+      },
+      {
+        "from": 697,
+        "to": 702,
+        "number": 1528
+      },
+      {
+        "from": 692,
+        "to": 697,
+        "number": 1528
+      },
+      {
+        "from": 687,
+        "to": 692,
+        "number": 1528
+      },
+      {
+        "from": 682,
+        "to": 687,
+        "number": 1528
+      },
+      {
+        "from": 677,
+        "to": 682,
+        "number": 1528
+      },
+      {
+        "from": 672,
+        "to": 677,
+        "number": 1528
+      },
+      {
+        "from": 667,
+        "to": 672,
+        "number": 1528
+      },
+      {
+        "from": 662,
+        "to": 667,
+        "number": 1528
+      },
+      {
+        "from": 658,
+        "to": 662,
+        "number": 1528
+      },
+      {
+        "from": 653,
+        "to": 658,
+        "number": 1528
+      },
+      {
+        "from": 648,
+        "to": 653,
+        "number": 1528
+      },
+      {
+        "from": 643,
+        "to": 648,
+        "number": 1528
+      },
+      {
+        "from": 638,
+        "to": 643,
+        "number": 1528
+      },
+      {
+        "from": 633,
+        "to": 638,
+        "number": 1528
+      },
+      {
+        "from": 629,
+        "to": 633,
+        "number": 1528
+      },
+      {
+        "from": 624,
+        "to": 629,
+        "number": 1528
+      },
+      {
+        "from": 619,
+        "to": 624,
+        "number": 1528
+      },
+      {
+        "from": 615,
+        "to": 619,
+        "number": 1528
+      },
+      {
+        "from": 610,
+        "to": 615,
+        "number": 1528
+      },
+      {
+        "from": 605,
+        "to": 610,
+        "number": 1528
+      },
+      {
+        "from": 601,
+        "to": 605,
+        "number": 1528
+      },
+      {
+        "from": 596,
+        "to": 601,
+        "number": 1528
+      },
+      {
+        "from": 592,
+        "to": 596,
+        "number": 1528
+      },
+      {
+        "from": 587,
+        "to": 592,
+        "number": 1528
+      },
+      {
+        "from": 583,
+        "to": 587,
+        "number": 1528
+      },
+      {
+        "from": 579,
+        "to": 583,
+        "number": 1528
+      },
+      {
+        "from": 574,
+        "to": 579,
+        "number": 1528
+      },
+      {
+        "from": 570,
+        "to": 574,
+        "number": 1528
+      },
+      {
+        "from": 565,
+        "to": 570,
+        "number": 1528
+      },
+      {
+        "from": 561,
+        "to": 565,
+        "number": 1528
+      },
+      {
+        "from": 556,
+        "to": 561,
+        "number": 1528
+      },
+      {
+        "from": 552,
+        "to": 556,
+        "number": 1528
+      },
+      {
+        "from": 547,
+        "to": 552,
+        "number": 1528
+      },
+      {
+        "from": 543,
+        "to": 547,
+        "number": 1528
+      },
+      {
+        "from": 538,
+        "to": 543,
+        "number": 1528
+      },
+      {
+        "from": 533,
+        "to": 538,
+        "number": 1528
+      },
+      {
+        "from": 529,
+        "to": 533,
+        "number": 1528
+      },
+      {
+        "from": 524,
+        "to": 529,
+        "number": 1528
+      },
+      {
+        "from": 519,
+        "to": 524,
+        "number": 1528
+      },
+      {
+        "from": 514,
+        "to": 519,
+        "number": 1528
+      },
+      {
+        "from": 509,
+        "to": 514,
+        "number": 1528
+      },
+      {
+        "from": 504,
+        "to": 509,
+        "number": 1528
+      },
+      {
+        "from": 499,
+        "to": 504,
+        "number": 1528
+      },
+      {
+        "from": 494,
+        "to": 499,
+        "number": 1528
+      },
+      {
+        "from": 489,
+        "to": 494,
+        "number": 1528
+      },
+      {
+        "from": 483,
+        "to": 489,
+        "number": 1528
+      },
+      {
+        "from": 477,
+        "to": 483,
+        "number": 1528
+      },
+      {
+        "from": 471,
+        "to": 477,
+        "number": 1528
+      },
+      {
+        "from": 465,
+        "to": 471,
+        "number": 1528
+      },
+      {
+        "from": 459,
+        "to": 465,
+        "number": 1528
+      },
+      {
+        "from": 452,
+        "to": 459,
+        "number": 1528
+      },
+      {
+        "from": 445,
+        "to": 452,
+        "number": 1528
+      },
+      {
+        "from": 437,
+        "to": 445,
+        "number": 1528
+      },
+      {
+        "from": 429,
+        "to": 437,
+        "number": 1528
+      },
+      {
+        "from": 419,
+        "to": 429,
+        "number": 1528
+      },
+      {
+        "from": 408,
+        "to": 419,
+        "number": 1528
+      },
+      {
+        "from": 395,
+        "to": 408,
+        "number": 1528
+      },
+      {
+        "from": 377,
+        "to": 394,
+        "number": 1528
+      },
+      {
+        "from": 352,
+        "to": 377,
+        "number": 1528
+      },
+      {
+        "from": 120,
+        "to": 352,
+        "number": 1519
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/diemthi/ts247/images/pho-diem-dgnl-ca-nam.png",
+    "status": 1,
+    "created_at": "2025-06-12T09:01:21.000Z",
+    "updated_at": "2025-06-16T09:42:54.000Z",
+    "admission_name": "Điểm ĐGNL HCM"
+  },
+  {
+    "id": 12,
+    "admission_id": 2,
+    "name": "Năm 2025 đợt 2",
+    "scores": [
+      {
+        "from": 301,
+        "to": 320,
+        "number": 73
+      },
+      {
+        "from": 321,
+        "to": 340,
+        "number": 98
+      },
+      {
+        "from": 341,
+        "to": 360,
+        "number": 223
+      },
+      {
+        "from": 361,
+        "to": 380,
+        "number": 311
+      },
+      {
+        "from": 381,
+        "to": 400,
+        "number": 462
+      },
+      {
+        "from": 401,
+        "to": 420,
+        "number": 601
+      },
+      {
+        "from": 421,
+        "to": 440,
+        "number": 803
+      },
+      {
+        "from": 441,
+        "to": 460,
+        "number": 1118
+      },
+      {
+        "from": 461,
+        "to": 480,
+        "number": 1370
+      },
+      {
+        "from": 481,
+        "to": 500,
+        "number": 1635
+      },
+      {
+        "from": 501,
+        "to": 520,
+        "number": 1874
+      },
+      {
+        "from": 521,
+        "to": 540,
+        "number": 2177
+      },
+      {
+        "from": 541,
+        "to": 560,
+        "number": 2492
+      },
+      {
+        "from": 561,
+        "to": 580,
+        "number": 2782
+      },
+      {
+        "from": 581,
+        "to": 600,
+        "number": 2908
+      },
+      {
+        "from": 601,
+        "to": 620,
+        "number": 3223
+      },
+      {
+        "from": 621,
+        "to": 640,
+        "number": 3274
+      },
+      {
+        "from": 641,
+        "to": 660,
+        "number": 3513
+      },
+      {
+        "from": 661,
+        "to": 680,
+        "number": 3740
+      },
+      {
+        "from": 681,
+        "to": 700,
+        "number": 3803
+      },
+      {
+        "from": 701,
+        "to": 720,
+        "number": 3992
+      },
+      {
+        "from": 721,
+        "to": 740,
+        "number": 4118
+      },
+      {
+        "from": 741,
+        "to": 760,
+        "number": 4294
+      },
+      {
+        "from": 761,
+        "to": 780,
+        "number": 4105
+      },
+      {
+        "from": 781,
+        "to": 800,
+        "number": 4193
+      },
+      {
+        "from": 801,
+        "to": 820,
+        "number": 4093
+      },
+      {
+        "from": 821,
+        "to": 840,
+        "number": 4257
+      },
+      {
+        "from": 841,
+        "to": 860,
+        "number": 3954
+      },
+      {
+        "from": 861,
+        "to": 880,
+        "number": 3967
+      },
+      {
+        "from": 881,
+        "to": 900,
+        "number": 3702
+      },
+      {
+        "from": 901,
+        "to": 920,
+        "number": 3324
+      },
+      {
+        "from": 921,
+        "to": 940,
+        "number": 3021
+      },
+      {
+        "from": 941,
+        "to": 960,
+        "number": 2643
+      },
+      {
+        "from": 961,
+        "to": 980,
+        "number": 2025
+      },
+      {
+        "from": 981,
+        "to": 1000,
+        "number": 1572
+      },
+      {
+        "from": 1001,
+        "to": 1020,
+        "number": 1130
+      },
+      {
+        "from": 1021,
+        "to": 1040,
+        "number": 677
+      },
+      {
+        "from": 1041,
+        "to": 1060,
+        "number": 387
+      },
+      {
+        "from": 1061,
+        "to": 1080,
+        "number": 198
+      },
+      {
+        "from": 1081,
+        "to": 1100,
+        "number": 97
+      },
+      {
+        "from": 1101,
+        "to": 1120,
+        "number": 15
+      },
+      {
+        "from": 1121,
+        "to": 1140,
+        "number": 1
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/diemthi/ts247/images/ho-diem-dgnl-dot-2-17497137847852089624268_1.png",
+    "status": 1,
+    "created_at": "2025-06-12T08:36:06.000Z",
+    "updated_at": "2025-06-12T08:59:47.000Z",
+    "admission_name": "Điểm ĐGNL HCM"
+  },
+  {
+    "id": 8,
+    "admission_id": 2,
+    "name": "Năm 2025 đợt 1",
+    "scores": [
+      {
+        "from": 0,
+        "to": 50,
+        "number": 1
+      },
+      {
+        "from": 51,
+        "to": 100,
+        "number": 2
+      },
+      {
+        "from": 101,
+        "to": 150,
+        "number": 3
+      },
+      {
+        "from": 151,
+        "to": 200,
+        "number": 5
+      },
+      {
+        "from": 201,
+        "to": 250,
+        "number": 34
+      },
+      {
+        "from": 251,
+        "to": 300,
+        "number": 230
+      },
+      {
+        "from": 301,
+        "to": 350,
+        "number": 979
+      },
+      {
+        "from": 351,
+        "to": 400,
+        "number": 3390
+      },
+      {
+        "from": 401,
+        "to": 450,
+        "number": 8096
+      },
+      {
+        "from": 451,
+        "to": 500,
+        "number": 13216
+      },
+      {
+        "from": 501,
+        "to": 550,
+        "number": 16596
+      },
+      {
+        "from": 551,
+        "to": 600,
+        "number": 17540
+      },
+      {
+        "from": 601,
+        "to": 650,
+        "number": 16741
+      },
+      {
+        "from": 651,
+        "to": 700,
+        "number": 14973
+      },
+      {
+        "from": 701,
+        "to": 750,
+        "number": 12437
+      },
+      {
+        "from": 751,
+        "to": 800,
+        "number": 9104
+      },
+      {
+        "from": 801,
+        "to": 850,
+        "number": 6246
+      },
+      {
+        "from": 851,
+        "to": 900,
+        "number": 3816
+      },
+      {
+        "from": 901,
+        "to": 950,
+        "number": 2026
+      },
+      {
+        "from": 951,
+        "to": 1000,
+        "number": 716
+      },
+      {
+        "from": 1001,
+        "to": 1050,
+        "number": 140
+      },
+      {
+        "from": 1051,
+        "to": 1100,
+        "number": 2
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/2025/0415/pho-diem-thi-vact-2025-dot-1.png",
+    "status": 1,
+    "created_at": "2025-04-15T08:13:46.000Z",
+    "updated_at": null,
+    "admission_name": "Điểm ĐGNL HCM"
+  },
+  {
+    "id": 1,
+    "admission_id": 2,
+    "name": "Năm 2024 - Đợt 2",
+    "scores": [
+      {
+        "from": 251,
+        "to": 300,
+        "number": 2
+      },
+      {
+        "from": 301,
+        "to": 350,
+        "number": 13
+      },
+      {
+        "from": 351,
+        "to": 400,
+        "number": 88
+      },
+      {
+        "from": 401,
+        "to": 450,
+        "number": 390
+      },
+      {
+        "from": 451,
+        "to": 500,
+        "number": 1125
+      },
+      {
+        "from": 501,
+        "to": 550,
+        "number": 2171
+      },
+      {
+        "from": 551,
+        "to": 600,
+        "number": 3421
+      },
+      {
+        "from": 601,
+        "to": 650,
+        "number": 4283
+      },
+      {
+        "from": 651,
+        "to": 700,
+        "number": 5068
+      },
+      {
+        "from": 701,
+        "to": 750,
+        "number": 5356
+      },
+      {
+        "from": 751,
+        "to": 800,
+        "number": 5245
+      },
+      {
+        "from": 801,
+        "to": 850,
+        "number": 4686
+      },
+      {
+        "from": 851,
+        "to": 900,
+        "number": 3557
+      },
+      {
+        "from": 901,
+        "to": 950,
+        "number": 2350
+      },
+      {
+        "from": 951,
+        "to": 1000,
+        "number": 974
+      },
+      {
+        "from": 1001,
+        "to": 1050,
+        "number": 252
+      },
+      {
+        "from": 1051,
+        "to": 1100,
+        "number": 48
+      },
+      {
+        "from": 1101,
+        "to": 1150,
+        "number": 2
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/2025/0108/pho-diem-thi-dgnl-dot-2-hcm-2024.png",
+    "status": 1,
+    "created_at": "2024-12-04T15:15:23.000Z",
+    "updated_at": "2025-04-15T03:47:26.000Z",
+    "admission_name": "Điểm ĐGNL HCM"
+  },
+  {
+    "id": 2,
+    "admission_id": 2,
+    "name": "Năm 2024 - Tổng hợp các đợt",
+    "scores": [
+      {
+        "from": 201,
+        "to": 250,
+        "number": 2
+      },
+      {
+        "from": 251,
+        "to": 300,
+        "number": 21
+      },
+      {
+        "from": 301,
+        "to": 350,
+        "number": 151
+      },
+      {
+        "from": 351,
+        "to": 400,
+        "number": 694
+      },
+      {
+        "from": 401,
+        "to": 450,
+        "number": 2519
+      },
+      {
+        "from": 451,
+        "to": 500,
+        "number": 6191
+      },
+      {
+        "from": 501,
+        "to": 550,
+        "number": 11016
+      },
+      {
+        "from": 551,
+        "to": 600,
+        "number": 14800
+      },
+      {
+        "from": 601,
+        "to": 650,
+        "number": 15901
+      },
+      {
+        "from": 651,
+        "to": 700,
+        "number": 14849
+      },
+      {
+        "from": 701,
+        "to": 750,
+        "number": 12256
+      },
+      {
+        "from": 751,
+        "to": 800,
+        "number": 9575
+      },
+      {
+        "from": 801,
+        "to": 850,
+        "number": 7247
+      },
+      {
+        "from": 851,
+        "to": 900,
+        "number": 4967
+      },
+      {
+        "from": 901,
+        "to": 950,
+        "number": 3054
+      },
+      {
+        "from": 951,
+        "to": 1000,
+        "number": 1228
+      },
+      {
+        "from": 1001,
+        "to": 1050,
+        "number": 316
+      },
+      {
+        "from": 1051,
+        "to": 1100,
+        "number": 54
+      },
+      {
+        "from": 1101,
+        "to": 1150,
+        "number": 2
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/2025/0108/pho-diem-thi-dgnl-hcm-2024-tat-ca-cac-dot.png",
+    "status": 1,
+    "created_at": "2024-12-04T15:15:23.000Z",
+    "updated_at": null,
+    "admission_name": "Điểm ĐGNL HCM"
+  },
+  {
+    "id": 19,
+    "admission_id": 6,
+    "name": "TSA 2026 đợt 1",
+    "scores": [
+      {
+        "from": 17.36,
+        "to": 19.35,
+        "number": 22
+      },
+      {
+        "from": 21.36,
+        "to": 23.35,
+        "number": 11
+      },
+      {
+        "from": 25.36,
+        "to": 27.35,
+        "number": 14
+      },
+      {
+        "from": 27.36,
+        "to": 29.35,
+        "number": 24
+      },
+      {
+        "from": 29.36,
+        "to": 31.35,
+        "number": 39
+      },
+      {
+        "from": 31.36,
+        "to": 33.35,
+        "number": 59
+      },
+      {
+        "from": 33.36,
+        "to": 35.35,
+        "number": 126
+      },
+      {
+        "from": 35.36,
+        "to": 37.35,
+        "number": 198
+      },
+      {
+        "from": 37.36,
+        "to": 39.35,
+        "number": 281
+      },
+      {
+        "from": 39.36,
+        "to": 41.35,
+        "number": 421
+      },
+      {
+        "from": 41.36,
+        "to": 43.35,
+        "number": 602
+      },
+      {
+        "from": 43.36,
+        "to": 45.35,
+        "number": 861
+      },
+      {
+        "from": 45.36,
+        "to": 47.35,
+        "number": 1063
+      },
+      {
+        "from": 47.36,
+        "to": 49.35,
+        "number": 1270
+      },
+      {
+        "from": 49.36,
+        "to": 51.35,
+        "number": 1420
+      },
+      {
+        "from": 51.36,
+        "to": 53.35,
+        "number": 1570
+      },
+      {
+        "from": 53.36,
+        "to": 55.35,
+        "number": 1605
+      },
+      {
+        "from": 55.36,
+        "to": 57.35,
+        "number": 1543
+      },
+      {
+        "from": 57.36,
+        "to": 59.35,
+        "number": 1402
+      },
+      {
+        "from": 59.36,
+        "to": 61.35,
+        "number": 1115
+      },
+      {
+        "from": 61.36,
+        "to": 63.35,
+        "number": 969
+      },
+      {
+        "from": 63.36,
+        "to": 65.35,
+        "number": 771
+      },
+      {
+        "from": 65.36,
+        "to": 67.35,
+        "number": 521
+      },
+      {
+        "from": 67.36,
+        "to": 69.35,
+        "number": 380
+      },
+      {
+        "from": 69.36,
+        "to": 71.35,
+        "number": 208
+      },
+      {
+        "from": 71.36,
+        "to": 73.35,
+        "number": 140
+      },
+      {
+        "from": 73.36,
+        "to": 75.35,
+        "number": 119
+      },
+      {
+        "from": 75.36,
+        "to": 77.35,
+        "number": 40
+      },
+      {
+        "from": 77.36,
+        "to": 79.35,
+        "number": 19
+      },
+      {
+        "from": 79.36,
+        "to": 81.35,
+        "number": 20
+      },
+      {
+        "from": 81.36,
+        "to": 89.99,
+        "number": 54
+      },
+      {
+        "from": 90,
+        "to": 100,
+        "number": 5
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/diemthi/ts247/images/pho-diem-thi-tsa-2026-dot-1.png",
+    "status": 1,
+    "created_at": "2026-02-03T02:14:28.000Z",
+    "updated_at": "2026-02-03T02:14:28.000Z",
+    "admission_name": "Điểm Đánh giá Tư duy"
+  },
+  {
+    "id": 10,
+    "admission_id": 6,
+    "name": "Tổng 3 đợt thi TSA 2025",
+    "scores": [
+      {
+        "from": 19.36,
+        "to": 20.46,
+        "number": 7
+      },
+      {
+        "from": 21.56,
+        "to": 22.66,
+        "number": 7
+      },
+      {
+        "from": 22.67,
+        "to": 23.75,
+        "number": 29
+      },
+      {
+        "from": 23.76,
+        "to": 24.86,
+        "number": 22
+      },
+      {
+        "from": 24.87,
+        "to": 25.95,
+        "number": 32
+      },
+      {
+        "from": 25.96,
+        "to": 27.06,
+        "number": 49
+      },
+      {
+        "from": 27.07,
+        "to": 28.15,
+        "number": 42
+      },
+      {
+        "from": 28.16,
+        "to": 29.26,
+        "number": 42
+      },
+      {
+        "from": 29.27,
+        "to": 30.35,
+        "number": 69
+      },
+      {
+        "from": 30.36,
+        "to": 31.46,
+        "number": 94
+      },
+      {
+        "from": 31.47,
+        "to": 32.55,
+        "number": 107
+      },
+      {
+        "from": 32.56,
+        "to": 33.66,
+        "number": 119
+      },
+      {
+        "from": 33.67,
+        "to": 34.75,
+        "number": 157
+      },
+      {
+        "from": 34.76,
+        "to": 35.86,
+        "number": 150
+      },
+      {
+        "from": 35.87,
+        "to": 36.95,
+        "number": 204
+      },
+      {
+        "from": 36.96,
+        "to": 38.06,
+        "number": 251
+      },
+      {
+        "from": 38.07,
+        "to": 39.15,
+        "number": 316
+      },
+      {
+        "from": 39.16,
+        "to": 40.26,
+        "number": 349
+      },
+      {
+        "from": 40.27,
+        "to": 41.35,
+        "number": 397
+      },
+      {
+        "from": 41.36,
+        "to": 42.46,
+        "number": 505
+      },
+      {
+        "from": 42.47,
+        "to": 43.55,
+        "number": 594
+      },
+      {
+        "from": 43.56,
+        "to": 44.66,
+        "number": 661
+      },
+      {
+        "from": 44.67,
+        "to": 45.75,
+        "number": 742
+      },
+      {
+        "from": 45.76,
+        "to": 46.86,
+        "number": 834
+      },
+      {
+        "from": 46.87,
+        "to": 47.95,
+        "number": 971
+      },
+      {
+        "from": 47.96,
+        "to": 49.06,
+        "number": 988
+      },
+      {
+        "from": 49.07,
+        "to": 50.15,
+        "number": 1075
+      },
+      {
+        "from": 50.16,
+        "to": 51.26,
+        "number": 1144
+      },
+      {
+        "from": 51.27,
+        "to": 52.35,
+        "number": 1219
+      },
+      {
+        "from": 52.36,
+        "to": 53.46,
+        "number": 1300
+      },
+      {
+        "from": 53.47,
+        "to": 54.55,
+        "number": 1354
+      },
+      {
+        "from": 54.56,
+        "to": 55.66,
+        "number": 1324
+      },
+      {
+        "from": 55.67,
+        "to": 56.75,
+        "number": 1273
+      },
+      {
+        "from": 56.76,
+        "to": 57.86,
+        "number": 1293
+      },
+      {
+        "from": 57.87,
+        "to": 58.95,
+        "number": 1148
+      },
+      {
+        "from": 58.96,
+        "to": 60.06,
+        "number": 1158
+      },
+      {
+        "from": 60.07,
+        "to": 61.15,
+        "number": 1084
+      },
+      {
+        "from": 61.16,
+        "to": 62.26,
+        "number": 1050
+      },
+      {
+        "from": 62.27,
+        "to": 63.35,
+        "number": 908
+      },
+      {
+        "from": 63.36,
+        "to": 64.46,
+        "number": 786
+      },
+      {
+        "from": 64.47,
+        "to": 65.55,
+        "number": 705
+      },
+      {
+        "from": 65.56,
+        "to": 66.66,
+        "number": 644
+      },
+      {
+        "from": 66.67,
+        "to": 67.75,
+        "number": 582
+      },
+      {
+        "from": 67.76,
+        "to": 68.86,
+        "number": 482
+      },
+      {
+        "from": 68.87,
+        "to": 69.95,
+        "number": 399
+      },
+      {
+        "from": 69.96,
+        "to": 71.06,
+        "number": 385
+      },
+      {
+        "from": 71.07,
+        "to": 72.15,
+        "number": 291
+      },
+      {
+        "from": 72.16,
+        "to": 73.26,
+        "number": 244
+      },
+      {
+        "from": 73.27,
+        "to": 74.35,
+        "number": 185
+      },
+      {
+        "from": 74.36,
+        "to": 75.46,
+        "number": 166
+      },
+      {
+        "from": 75.47,
+        "to": 76.55,
+        "number": 142
+      },
+      {
+        "from": 76.56,
+        "to": 77.66,
+        "number": 119
+      },
+      {
+        "from": 77.67,
+        "to": 78.75,
+        "number": 105
+      },
+      {
+        "from": 78.76,
+        "to": 79.86,
+        "number": 102
+      },
+      {
+        "from": 79.87,
+        "to": 80.95,
+        "number": 74
+      },
+      {
+        "from": 80.96,
+        "to": 82.06,
+        "number": 40
+      },
+      {
+        "from": 82.07,
+        "to": 83.15,
+        "number": 33
+      },
+      {
+        "from": 83.16,
+        "to": 84.26,
+        "number": 40
+      },
+      {
+        "from": 84.27,
+        "to": 85.35,
+        "number": 20
+      },
+      {
+        "from": 85.36,
+        "to": 86.46,
+        "number": 16
+      },
+      {
+        "from": 86.47,
+        "to": 87.55,
+        "number": 10
+      },
+      {
+        "from": 87.56,
+        "to": 88.66,
+        "number": 3
+      },
+      {
+        "from": 88.67,
+        "to": 89.75,
+        "number": 6
+      },
+      {
+        "from": 89.76,
+        "to": 90.86,
+        "number": 4
+      },
+      {
+        "from": 90.87,
+        "to": 91.95,
+        "number": 3
+      },
+      {
+        "from": 91.96,
+        "to": 93.06,
+        "number": 2
+      },
+      {
+        "from": 93.06,
+        "to": 100,
+        "number": 1
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/diemthi/ts247/images/pho-diem-tsa-3-dot1.png",
+    "status": 1,
+    "created_at": "2025-05-06T03:02:12.000Z",
+    "updated_at": "2025-05-21T08:35:40.000Z",
+    "admission_name": "Điểm Đánh giá Tư duy"
+  },
+  {
+    "id": 9,
+    "admission_id": 6,
+    "name": "TSA 2025 đợt 3",
+    "scores": [
+      {
+        "from": 22.6,
+        "to": 23.8,
+        "number": 7
+      },
+      {
+        "from": 25,
+        "to": 26.2,
+        "number": 11
+      },
+      {
+        "from": 26.21,
+        "to": 27.39,
+        "number": 18
+      },
+      {
+        "from": 27.4,
+        "to": 28.6,
+        "number": 29
+      },
+      {
+        "from": 28.61,
+        "to": 29.79,
+        "number": 32
+      },
+      {
+        "from": 29.8,
+        "to": 31,
+        "number": 50
+      },
+      {
+        "from": 31.01,
+        "to": 32.19,
+        "number": 68
+      },
+      {
+        "from": 32.2,
+        "to": 33.4,
+        "number": 86
+      },
+      {
+        "from": 33.41,
+        "to": 34.59,
+        "number": 115
+      },
+      {
+        "from": 34.6,
+        "to": 35.8,
+        "number": 130
+      },
+      {
+        "from": 35.81,
+        "to": 36.99,
+        "number": 173
+      },
+      {
+        "from": 37,
+        "to": 38.2,
+        "number": 230
+      },
+      {
+        "from": 38.21,
+        "to": 39.39,
+        "number": 277
+      },
+      {
+        "from": 39.4,
+        "to": 40.6,
+        "number": 331
+      },
+      {
+        "from": 40.61,
+        "to": 41.79,
+        "number": 374
+      },
+      {
+        "from": 41.8,
+        "to": 43,
+        "number": 489
+      },
+      {
+        "from": 43.01,
+        "to": 44.19,
+        "number": 554
+      },
+      {
+        "from": 44.2,
+        "to": 45.4,
+        "number": 695
+      },
+      {
+        "from": 45.41,
+        "to": 46.59,
+        "number": 738
+      },
+      {
+        "from": 46.6,
+        "to": 47.8,
+        "number": 860
+      },
+      {
+        "from": 47.81,
+        "to": 48.99,
+        "number": 921
+      },
+      {
+        "from": 49,
+        "to": 50.2,
+        "number": 1015
+      },
+      {
+        "from": 50.21,
+        "to": 51.39,
+        "number": 1098
+      },
+      {
+        "from": 51.4,
+        "to": 52.6,
+        "number": 1137
+      },
+      {
+        "from": 52.61,
+        "to": 53.79,
+        "number": 1192
+      },
+      {
+        "from": 53.8,
+        "to": 55,
+        "number": 1224
+      },
+      {
+        "from": 55.01,
+        "to": 56.19,
+        "number": 1198
+      },
+      {
+        "from": 56.2,
+        "to": 57.4,
+        "number": 1209
+      },
+      {
+        "from": 57.41,
+        "to": 58.59,
+        "number": 1108
+      },
+      {
+        "from": 58.6,
+        "to": 59.8,
+        "number": 1094
+      },
+      {
+        "from": 59.81,
+        "to": 60.99,
+        "number": 1015
+      },
+      {
+        "from": 61,
+        "to": 62.2,
+        "number": 911
+      },
+      {
+        "from": 62.21,
+        "to": 63.39,
+        "number": 839
+      },
+      {
+        "from": 63.4,
+        "to": 64.6,
+        "number": 716
+      },
+      {
+        "from": 64.61,
+        "to": 65.79,
+        "number": 615
+      },
+      {
+        "from": 65.8,
+        "to": 67,
+        "number": 576
+      },
+      {
+        "from": 67.01,
+        "to": 68.19,
+        "number": 457
+      },
+      {
+        "from": 68.2,
+        "to": 69.4,
+        "number": 378
+      },
+      {
+        "from": 69.41,
+        "to": 70.59,
+        "number": 306
+      },
+      {
+        "from": 70.6,
+        "to": 71.8,
+        "number": 277
+      },
+      {
+        "from": 71.81,
+        "to": 72.99,
+        "number": 223
+      },
+      {
+        "from": 73,
+        "to": 74.2,
+        "number": 166
+      },
+      {
+        "from": 74.21,
+        "to": 75.39,
+        "number": 148
+      },
+      {
+        "from": 75.4,
+        "to": 76.6,
+        "number": 115
+      },
+      {
+        "from": 76.61,
+        "to": 77.79,
+        "number": 97
+      },
+      {
+        "from": 77.8,
+        "to": 79,
+        "number": 67
+      },
+      {
+        "from": 79.01,
+        "to": 80.19,
+        "number": 58
+      },
+      {
+        "from": 80.2,
+        "to": 81.4,
+        "number": 25
+      },
+      {
+        "from": 81.41,
+        "to": 82.59,
+        "number": 19
+      },
+      {
+        "from": 82.6,
+        "to": 83.8,
+        "number": 25
+      },
+      {
+        "from": 83.81,
+        "to": 84.99,
+        "number": 14
+      },
+      {
+        "from": 85,
+        "to": 86.2,
+        "number": 21
+      },
+      {
+        "from": 90.01,
+        "to": 100,
+        "number": 2
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/diemthi/ts247/images/pho-diem-tsa-dot-3.png",
+    "status": 1,
+    "created_at": "2025-05-06T03:02:02.000Z",
+    "updated_at": "2025-05-06T03:03:47.000Z",
+    "admission_name": "Điểm Đánh giá Tư duy"
+  },
+  {
+    "id": 6,
+    "admission_id": 6,
+    "name": "TSA 2025 đợt 2",
+    "scores": [
+      {
+        "from": 20.07,
+        "to": 21.35,
+        "number": 8
+      },
+      {
+        "from": 21.36,
+        "to": 22.66,
+        "number": 10
+      },
+      {
+        "from": 22.67,
+        "to": 23.95,
+        "number": 13
+      },
+      {
+        "from": 23.96,
+        "to": 25.26,
+        "number": 10
+      },
+      {
+        "from": 25.27,
+        "to": 26.55,
+        "number": 18
+      },
+      {
+        "from": 26.56,
+        "to": 27.86,
+        "number": 34
+      },
+      {
+        "from": 27.87,
+        "to": 29.15,
+        "number": 37
+      },
+      {
+        "from": 29.16,
+        "to": 30.46,
+        "number": 58
+      },
+      {
+        "from": 30.47,
+        "to": 31.75,
+        "number": 74
+      },
+      {
+        "from": 31.76,
+        "to": 33.06,
+        "number": 77
+      },
+      {
+        "from": 33.07,
+        "to": 34.35,
+        "number": 106
+      },
+      {
+        "from": 34.36,
+        "to": 35.66,
+        "number": 101
+      },
+      {
+        "from": 35.67,
+        "to": 36.95,
+        "number": 149
+      },
+      {
+        "from": 36.96,
+        "to": 38.26,
+        "number": 187
+      },
+      {
+        "from": 38.27,
+        "to": 39.55,
+        "number": 245
+      },
+      {
+        "from": 39.56,
+        "to": 40.86,
+        "number": 288
+      },
+      {
+        "from": 40.87,
+        "to": 42.15,
+        "number": 384
+      },
+      {
+        "from": 42.16,
+        "to": 43.46,
+        "number": 451
+      },
+      {
+        "from": 43.47,
+        "to": 44.75,
+        "number": 497
+      },
+      {
+        "from": 44.76,
+        "to": 46.06,
+        "number": 593
+      },
+      {
+        "from": 46.07,
+        "to": 47.35,
+        "number": 708
+      },
+      {
+        "from": 47.36,
+        "to": 48.66,
+        "number": 753
+      },
+      {
+        "from": 48.67,
+        "to": 49.95,
+        "number": 849
+      },
+      {
+        "from": 49.96,
+        "to": 51.26,
+        "number": 962
+      },
+      {
+        "from": 51.27,
+        "to": 52.55,
+        "number": 101
+      },
+      {
+        "from": 52.56,
+        "to": 53.86,
+        "number": 1069
+      },
+      {
+        "from": 53.87,
+        "to": 55.15,
+        "number": 1039
+      },
+      {
+        "from": 55.16,
+        "to": 56.46,
+        "number": 1069
+      },
+      {
+        "from": 56.47,
+        "to": 57.75,
+        "number": 1087
+      },
+      {
+        "from": 57.76,
+        "to": 59.06,
+        "number": 922
+      },
+      {
+        "from": 59.07,
+        "to": 60.35,
+        "number": 919
+      },
+      {
+        "from": 60.37,
+        "to": 61.65,
+        "number": 839
+      },
+      {
+        "from": 61.66,
+        "to": 62.96,
+        "number": 791
+      },
+      {
+        "from": 62.97,
+        "to": 64.25,
+        "number": 643
+      },
+      {
+        "from": 64.26,
+        "to": 65.56,
+        "number": 543
+      },
+      {
+        "from": 65.57,
+        "to": 66.85,
+        "number": 470
+      },
+      {
+        "from": 66.86,
+        "to": 68.16,
+        "number": 354
+      },
+      {
+        "from": 68.17,
+        "to": 69.45,
+        "number": 297
+      },
+      {
+        "from": 69.46,
+        "to": 69,
+        "number": 242
+      },
+      {
+        "from": 70,
+        "to": 72.05,
+        "number": 195
+      },
+      {
+        "from": 72.06,
+        "to": 73.36,
+        "number": 146
+      },
+      {
+        "from": 73.37,
+        "to": 74.65,
+        "number": 122
+      },
+      {
+        "from": 74.66,
+        "to": 75.96,
+        "number": 83
+      },
+      {
+        "from": 75.97,
+        "to": 77.25,
+        "number": 90
+      },
+      {
+        "from": 77.26,
+        "to": 78.56,
+        "number": 58
+      },
+      {
+        "from": 78.57,
+        "to": 79.85,
+        "number": 53
+      },
+      {
+        "from": 79.86,
+        "to": 79,
+        "number": 37
+      },
+      {
+        "from": 80,
+        "to": 82.45,
+        "number": 19
+      },
+      {
+        "from": 82.46,
+        "to": 83.76,
+        "number": 19
+      },
+      {
+        "from": 83.77,
+        "to": 85.05,
+        "number": 8
+      },
+      {
+        "from": 85.06,
+        "to": 86.36,
+        "number": 7
+      },
+      {
+        "from": 86.37,
+        "to": 87.65,
+        "number": 1
+      },
+      {
+        "from": 87.66,
+        "to": 88.96,
+        "number": 7
+      },
+      {
+        "from": 88.97,
+        "to": 90.25,
+        "number": 1
+      },
+      {
+        "from": 90.26,
+        "to": 91.56,
+        "number": 1
+      },
+      {
+        "from": 91.57,
+        "to": 100,
+        "number": 4
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/2025/0318/pho-diem-tsa-dot-2.png",
+    "status": 1,
+    "created_at": "2025-03-17T08:37:14.000Z",
+    "updated_at": null,
+    "admission_name": "Điểm Đánh giá Tư duy"
+  },
+  {
+    "id": 5,
+    "admission_id": 6,
+    "name": "TSA 2025 đợt 1",
+    "scores": [
+      {
+        "from": 16.7,
+        "to": 24.49,
+        "number": 3
+      },
+      {
+        "from": 24.5,
+        "to": 25.8,
+        "number": 10
+      },
+      {
+        "from": 25.81,
+        "to": 27.09,
+        "number": 10
+      },
+      {
+        "from": 27.1,
+        "to": 28.4,
+        "number": 10
+      },
+      {
+        "from": 28.41,
+        "to": 29.69,
+        "number": 20
+      },
+      {
+        "from": 29.7,
+        "to": 31,
+        "number": 30
+      },
+      {
+        "from": 31.01,
+        "to": 32.29,
+        "number": 30
+      },
+      {
+        "from": 32.3,
+        "to": 33.6,
+        "number": 35
+      },
+      {
+        "from": 33.61,
+        "to": 34.89,
+        "number": 50
+      },
+      {
+        "from": 34.9,
+        "to": 36.2,
+        "number": 60
+      },
+      {
+        "from": 36.21,
+        "to": 37.49,
+        "number": 100
+      },
+      {
+        "from": 37.5,
+        "to": 38.8,
+        "number": 110
+      },
+      {
+        "from": 38.81,
+        "to": 40.09,
+        "number": 180
+      },
+      {
+        "from": 40.1,
+        "to": 41.4,
+        "number": 200
+      },
+      {
+        "from": 41.41,
+        "to": 42.69,
+        "number": 290
+      },
+      {
+        "from": 42.7,
+        "to": 44,
+        "number": 395
+      },
+      {
+        "from": 44.01,
+        "to": 45.29,
+        "number": 590
+      },
+      {
+        "from": 45.3,
+        "to": 46.6,
+        "number": 505
+      },
+      {
+        "from": 46.61,
+        "to": 47.89,
+        "number": 600
+      },
+      {
+        "from": 47.9,
+        "to": 49.2,
+        "number": 650
+      },
+      {
+        "from": 49.21,
+        "to": 50.49,
+        "number": 750
+      },
+      {
+        "from": 50.5,
+        "to": 51.8,
+        "number": 799
+      },
+      {
+        "from": 51.81,
+        "to": 53.09,
+        "number": 820
+      },
+      {
+        "from": 53.1,
+        "to": 54.4,
+        "number": 810
+      },
+      {
+        "from": 54.41,
+        "to": 55.69,
+        "number": 815
+      },
+      {
+        "from": 55.7,
+        "to": 57,
+        "number": 810
+      },
+      {
+        "from": 57.01,
+        "to": 58.29,
+        "number": 710
+      },
+      {
+        "from": 58.3,
+        "to": 59.6,
+        "number": 610
+      },
+      {
+        "from": 59.61,
+        "to": 60.89,
+        "number": 595
+      },
+      {
+        "from": 60.9,
+        "to": 62.2,
+        "number": 510
+      },
+      {
+        "from": 62.21,
+        "to": 63.49,
+        "number": 450
+      },
+      {
+        "from": 63.5,
+        "to": 64.8,
+        "number": 440
+      },
+      {
+        "from": 64.81,
+        "to": 66.09,
+        "number": 350
+      },
+      {
+        "from": 66.1,
+        "to": 67.4,
+        "number": 290
+      },
+      {
+        "from": 67.41,
+        "to": 68.69,
+        "number": 220
+      },
+      {
+        "from": 68.7,
+        "to": 70,
+        "number": 200
+      },
+      {
+        "from": 70.01,
+        "to": 71.29,
+        "number": 144
+      },
+      {
+        "from": 71.3,
+        "to": 72.6,
+        "number": 89
+      },
+      {
+        "from": 72.61,
+        "to": 73.89,
+        "number": 94
+      },
+      {
+        "from": 73.9,
+        "to": 75.2,
+        "number": 74
+      },
+      {
+        "from": 75.21,
+        "to": 76.49,
+        "number": 69
+      },
+      {
+        "from": 76.5,
+        "to": 77.8,
+        "number": 39
+      },
+      {
+        "from": 77.81,
+        "to": 79.09,
+        "number": 34
+      },
+      {
+        "from": 79.1,
+        "to": 80.4,
+        "number": 29
+      },
+      {
+        "from": 80.41,
+        "to": 81.69,
+        "number": 21
+      },
+      {
+        "from": 81.7,
+        "to": 83,
+        "number": 16
+      },
+      {
+        "from": 83.01,
+        "to": 84.29,
+        "number": 11
+      },
+      {
+        "from": 84.3,
+        "to": 85.6,
+        "number": 6
+      },
+      {
+        "from": 85.61,
+        "to": 86.89,
+        "number": 1
+      },
+      {
+        "from": 86.9,
+        "to": 88.2,
+        "number": 3
+      },
+      {
+        "from": 88.21,
+        "to": 89.49,
+        "number": 1
+      },
+      {
+        "from": 89.5,
+        "to": 89.99,
+        "number": 1
+      },
+      {
+        "from": 90,
+        "to": 100,
+        "number": 5
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/2025/0124/pho-diem-tsa-dot-1.png",
+    "status": 1,
+    "created_at": "2025-01-24T10:26:29.000Z",
+    "updated_at": null,
+    "admission_name": "Điểm Đánh giá Tư duy"
+  },
+  {
+    "id": 4,
+    "admission_id": 6,
+    "name": "TSA 2024 đợt 2",
+    "scores": [
+      {
+        "from": 25,
+        "to": 28,
+        "number": 1
+      },
+      {
+        "from": 29,
+        "to": 32,
+        "number": 5
+      },
+      {
+        "from": 33,
+        "to": 36,
+        "number": 10
+      },
+      {
+        "from": 37,
+        "to": 40,
+        "number": 90
+      },
+      {
+        "from": 41,
+        "to": 44,
+        "number": 190
+      },
+      {
+        "from": 45,
+        "to": 48,
+        "number": 395
+      },
+      {
+        "from": 49,
+        "to": 52,
+        "number": 675
+      },
+      {
+        "from": 53,
+        "to": 56,
+        "number": 950
+      },
+      {
+        "from": 57,
+        "to": 60,
+        "number": 1020
+      },
+      {
+        "from": 61,
+        "to": 64,
+        "number": 755
+      },
+      {
+        "from": 65,
+        "to": 68,
+        "number": 515
+      },
+      {
+        "from": 69,
+        "to": 72,
+        "number": 255
+      },
+      {
+        "from": 73,
+        "to": 76,
+        "number": 115
+      },
+      {
+        "from": 77,
+        "to": 80,
+        "number": 55
+      },
+      {
+        "from": 81,
+        "to": 84,
+        "number": 10
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/2025/0108/tsa-dot-2.jpg",
+    "status": 1,
+    "created_at": "2025-01-08T09:35:12.000Z",
+    "updated_at": null,
+    "admission_name": "Điểm Đánh giá Tư duy"
+  }
+]
