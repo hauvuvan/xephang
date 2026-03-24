@@ -405,6 +405,38 @@
     </div>
   </div>
 
+  <!-- HUST Admission Chances -->
+  <div id="hustSection" style="display:none">
+    <div class="section-head">
+      <h2>Khả năng đỗ ngành BKHN 2025</h2>
+      <span class="badge" style="background:#e8f0fe;color:#1a56db">So sánh theo điểm TSA (tham khảo)</span>
+    </div>
+    <div class="hust-filter-bar">
+      <button class="hust-filter-btn active" data-filter="all">Tất cả</button>
+      <button class="hust-filter-btn" data-filter="pass">Có khả năng đỗ</button>
+      <button class="hust-filter-btn" data-filter="near">Sát điểm chuẩn</button>
+      <button class="hust-filter-btn" data-filter="fail">Chưa đủ điểm</button>
+    </div>
+    <div class="table-wrap">
+      <div class="table-scroll">
+        <table id="hustTable">
+          <thead>
+            <tr>
+              <th style="width:44px">#</th>
+              <th>Mã ngành</th>
+              <th>Tên ngành</th>
+              <th>Điểm chuẩn TSA 2025</th>
+              <th>Chênh lệch</th>
+              <th>Khả năng</th>
+            </tr>
+          </thead>
+          <tbody id="hustBody"></tbody>
+        </table>
+      </div>
+      <p class="hust-note">* Điểm chuẩn năm 2025 — chỉ mang tính tham khảo, năm 2026 có thể thay đổi.</p>
+    </div>
+  </div>
+
   <!-- Table -->
   <div id="tableSection" style="display:none">
     <div class="section-head">
@@ -484,6 +516,31 @@
   }
   .tab-btn:hover { border-color: #d0021b; color: #d0021b; }
   .tab-btn.active { background: #d0021b; border-color: #d0021b; color: #fff; }
+
+  /* HUST section */
+  .hust-filter-bar {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;
+  }
+  .hust-filter-btn {
+    padding: 6px 14px; border-radius: 16px; border: 1.5px solid #d9d9d9;
+    background: #fff; font-size: 12px; font-weight: 500; color: #555; cursor: pointer;
+    transition: all .15s;
+  }
+  .hust-filter-btn:hover { border-color: #d0021b; color: #d0021b; }
+  .hust-filter-btn.active { background: #d0021b; border-color: #d0021b; color: #fff; }
+  .hust-chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600;
+  }
+  .hust-chip.pass { background: #e6f4ea; color: #1e7e34; }
+  .hust-chip.near { background: #fff8e1; color: #b45309; }
+  .hust-chip.fail { background: #fdecea; color: #c0392b; }
+  .hust-diff.pos { color: #1e7e34; font-weight: 600; }
+  .hust-diff.neg { color: #c0392b; font-weight: 600; }
+  .hust-diff.zero { color: #b45309; font-weight: 600; }
+  .hust-note {
+    font-size: 11px; color: #999; margin-top: 10px; padding: 0 4px;
+  }
 
   /* Footer */
   .site-footer {
@@ -628,6 +685,7 @@ function clearResults() {
   document.getElementById('resultBanner').classList.remove('show');
   document.getElementById('chartWrap').style.display = 'none';
   document.getElementById('tableSection').style.display = 'none';
+  document.getElementById('hustSection').style.display = 'none';
   document.getElementById('emptyState').style.display = 'block';
 }
 
@@ -693,6 +751,9 @@ function lookupRank() {
   document.getElementById('resAbove').textContent = fmt(aboveStrict);
   document.getElementById('resRank').textContent = fmt(rank);
   document.getElementById('resultBanner').classList.add('show');
+
+  // HUST comparison (TSA only)
+  renderHUST(scoreVal);
 
   // scroll to result
   document.getElementById('resultBanner').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -790,6 +851,130 @@ function renderTable(session, userScore, scores, total) {
   document.getElementById('sessionName').textContent = session.name;
   document.getElementById('tableSection').style.display = 'block';
 }
+
+// ── HUST 2025 TSA cutoff data ──
+const HUST_DATA = [
+  {code:'IT-E10',name:'Khoa học dữ liệu và Trí tuệ nhân tạo (CT tiên tiến)',cut:86.97},
+  {code:'IT1',  name:'CNTT: Khoa học Máy tính',cut:83.39},
+  {code:'IT2',  name:'CNTT: Kỹ thuật Máy tính',cut:79.86},
+  {code:'IT-E15',name:'An toàn không gian số - Cyber Security (CT tiên tiến)',cut:78.49},
+  {code:'IT-E7',name:'Công nghệ thông tin (Global ICT)',cut:78.19},
+  {code:'EE2',  name:'Kỹ thuật Điều khiển - Tự động hoá',cut:76.43},
+  {code:'MS2',  name:'Kỹ thuật Vi điện tử và Công nghệ nano',cut:74.76},
+  {code:'EE-E8',name:'Kỹ thuật Điều khiển - Tự động hoá (CT tiên tiến)',cut:73.86},
+  {code:'ET1',  name:'Kỹ thuật Điện tử - Viễn thông',cut:73.51},
+  {code:'IT-E6',name:'Công nghệ thông tin (Việt - Nhật)',cut:72.81},
+  {code:'ME1',  name:'Kỹ thuật Cơ điện tử',cut:72.32},
+  {code:'ET-E9',name:'Hệ thống nhúng thông minh và IoT (CT tiên tiến)',cut:71.97},
+  {code:'IT-EP',name:'Công nghệ thông tin (Việt - Pháp)',cut:71.83},
+  {code:'MI1',  name:'Toán - Tin',cut:71.62},
+  {code:'MI2',  name:'Hệ thống thông tin quản lý',cut:71.07},
+  {code:'EE1',  name:'Kỹ thuật Điện',cut:69.88},
+  {code:'ET-E4',name:'Kỹ thuật Điện tử - Viễn thông (CT tiên tiến)',cut:69.88},
+  {code:'EE-EP',name:'Tin học công nghiệp và Tự động hoá (PFIEV)',cut:68.73},
+  {code:'FL3',  name:'Tiếng Trung KHKT và Công nghệ',cut:68.14},
+  {code:'TE1',  name:'Kỹ thuật Ô tô',cut:67.74},
+  {code:'ME-E1',name:'Kỹ thuật Cơ điện tử (CT tiên tiến)',cut:66.54},
+  {code:'ET-E16',name:'Truyền thông số và Kỹ thuật đa phương tiện (CT tiên tiến)',cut:66.05},
+  {code:'ME2',  name:'Kỹ thuật Cơ khí',cut:66.05},
+  {code:'TE3',  name:'Kỹ thuật Hàng không',cut:65.97},
+  {code:'EE-E18',name:'Hệ thống điện và năng lượng tái tạo (CT tiên tiến)',cut:65.80},
+  {code:'ET-LUH',name:'Điện tử - Viễn thông - hợp tác ĐH Leibniz Hannover (Đức)',cut:65.76},
+  {code:'EM3',  name:'Quản trị kinh doanh',cut:65.81},
+  {code:'EM5',  name:'Tài chính - Ngân hàng',cut:65.81},
+  {code:'FL1',  name:'Tiếng Anh KHKT và Công nghệ',cut:65.81},
+  {code:'FL2',  name:'Tiếng Anh chuyên nghiệp quốc tế',cut:65.81},
+  {code:'PH1',  name:'Vật lý kỹ thuật',cut:65.19},
+  {code:'ET2',  name:'Kỹ thuật Y sinh',cut:64.82},
+  {code:'EM4',  name:'Kế toán',cut:65.11},
+  {code:'TE2',  name:'Kỹ thuật Cơ khí động lực',cut:64.53},
+  {code:'ME-LUH',name:'Cơ điện tử - hợp tác ĐH Leibniz Hannover (Đức)',cut:64.28},
+  {code:'EM2',  name:'Quản lý công nghiệp',cut:64.15},
+  {code:'TE-EP',name:'Cơ khí hàng không (PFIEV)',cut:62.84},
+  {code:'EM-E14',name:'Logistics và Quản lý chuỗi cung ứng (CT tiên tiến)',cut:63.36},
+  {code:'EM1',  name:'Quản lý năng lượng',cut:63.32},
+  {code:'ME-NUT',name:'Cơ điện tử - hợp tác ĐH Công nghệ Nagaoka (Nhật Bản)',cut:62.18},
+  {code:'ET-E5',name:'Kỹ thuật Y sinh (CT tiên tiến)',cut:61.77},
+  {code:'ED2',  name:'Công nghệ giáo dục',cut:61.66},
+  {code:'ED3',  name:'Quản lý giáo dục',cut:61.25},
+  {code:'HE1',  name:'Kỹ thuật Nhiệt',cut:61.32},
+  {code:'MS1',  name:'Kỹ thuật Vật liệu',cut:60.99},
+  {code:'EM-E13',name:'Phân tích kinh doanh (CT tiên tiến)',cut:60.66},
+  {code:'PH3',  name:'Vật lý Y khoa',cut:60.20},
+  {code:'TE-E2',name:'Kỹ thuật Ô tô (CT tiên tiến)',cut:60.12},
+  {code:'MS3',  name:'Công nghệ vật liệu Polyme và Compozit',cut:60.04},
+  {code:'PH2',  name:'Kỹ thuật hạt nhân',cut:59.68},
+  {code:'ME-GU',name:'Cơ khí - Chế tạo máy - hợp tác ĐH Griffith (Úc)',cut:59.49},
+  {code:'MS5',  name:'Kỹ thuật in',cut:56.88},
+  {code:'CH1',  name:'Kỹ thuật Hoá học',cut:56.86},
+  {code:'MS-E3',name:'Khoa học và kỹ thuật vật liệu (CT tiên tiến)',cut:55.89},
+  {code:'BF2',  name:'Kỹ thuật Thực phẩm',cut:55.05},
+  {code:'CH2',  name:'Hoá học',cut:54.66},
+  {code:'BF1',  name:'Kỹ thuật Sinh học',cut:54.30},
+  {code:'TROY-IT',name:'Khoa học máy tính - hợp tác ĐH Troy (Hoa Kỳ)',cut:54.07},
+  {code:'TX1',  name:'Công nghệ Dệt - May',cut:53.17},
+  {code:'EV1',  name:'Kỹ thuật Môi trường',cut:52.63},
+  {code:'EV2',  name:'Quản lý Tài nguyên và Môi trường',cut:51.19},
+  {code:'CH-E11',name:'Kỹ thuật Hóa dược (CT tiên tiến)',cut:50.88},
+  {code:'BF-E12',name:'Kỹ thuật Thực phẩm (CT tiên tiến)',cut:50.08},
+  {code:'BF-E19',name:'Kỹ thuật sinh học (CT tiên tiến)',cut:47.99},
+  {code:'TROY-BA',name:'Quản trị kinh doanh - hợp tác ĐH Troy (Hoa Kỳ)',cut:46.48},
+];
+
+let hustFilter = 'all';
+
+function renderHUST(userScore) {
+  const section = document.getElementById('hustSection');
+  if (isNaN(userScore) || currentAdmissionId !== 6) {
+    section.style.display = 'none';
+    return;
+  }
+  section.style.display = 'block';
+
+  const sorted = [...HUST_DATA].sort((a, b) => b.cut - a.cut);
+  const tbody = document.getElementById('hustBody');
+  tbody.innerHTML = '';
+
+  sorted.forEach((item, idx) => {
+    const diff = +(userScore - item.cut).toFixed(2);
+    let status, chip, diffClass;
+    if (diff >= 2) {
+      status = 'pass'; chip = 'Có khả năng đỗ'; diffClass = 'pos';
+    } else if (diff >= 0) {
+      status = 'near'; chip = 'Sát điểm chuẩn'; diffClass = 'zero';
+    } else if (diff >= -2) {
+      status = 'near'; chip = 'Sát điểm chuẩn'; diffClass = 'neg';
+    } else {
+      status = 'fail'; chip = 'Chưa đủ điểm'; diffClass = 'neg';
+    }
+
+    if (hustFilter !== 'all' && hustFilter !== status) return;
+
+    const diffStr = diff > 0 ? `+${diff.toFixed(2)}` : diff.toFixed(2);
+    const tr = document.createElement('tr');
+    tr.dataset.status = status;
+    tr.innerHTML = `
+      <td>${idx + 1}</td>
+      <td><strong>${item.code}</strong></td>
+      <td>${item.name}</td>
+      <td>${item.cut.toFixed(2)}</td>
+      <td class="hust-diff ${diffClass}">${diffStr}</td>
+      <td><span class="hust-chip ${status}">${chip}</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// HUST filter buttons
+document.querySelectorAll('.hust-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.hust-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    hustFilter = btn.dataset.filter;
+    const score = parseFloat(document.getElementById('inputScore').value);
+    renderHUST(score);
+  });
+});
 
 // Enter key support
 document.getElementById('inputScore').addEventListener('keydown', e => {
