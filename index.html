@@ -408,14 +408,22 @@
   <!-- HUST Admission Chances -->
   <div id="hustSection" style="display:none">
     <div class="section-head">
-      <h2>Khả năng đỗ ngành BKHN 2025</h2>
+      <h2>Khả năng đỗ ngành BKHN</h2>
       <span class="badge" style="background:#e8f0fe;color:#1a56db">So sánh theo điểm TSA (tham khảo)</span>
     </div>
     <div class="hust-filter-bar">
-      <button class="hust-filter-btn active" data-filter="all">Tất cả</button>
-      <button class="hust-filter-btn" data-filter="pass">Có khả năng đỗ</button>
-      <button class="hust-filter-btn" data-filter="near">Sát điểm chuẩn</button>
-      <button class="hust-filter-btn" data-filter="fail">Chưa đủ điểm</button>
+      <div class="hust-year-toggle">
+        <span class="hust-year-label">So sánh với:</span>
+        <button class="hust-year-btn active" data-year="2025">2025</button>
+        <button class="hust-year-btn" data-year="2024">2024</button>
+        <button class="hust-year-btn" data-year="2023">2023</button>
+      </div>
+      <div class="hust-filter-group">
+        <button class="hust-filter-btn active" data-filter="all">Tất cả</button>
+        <button class="hust-filter-btn" data-filter="pass">Có khả năng đỗ</button>
+        <button class="hust-filter-btn" data-filter="near">Sát điểm chuẩn</button>
+        <button class="hust-filter-btn" data-filter="fail">Chưa đủ điểm</button>
+      </div>
     </div>
     <div class="table-wrap">
       <div class="table-scroll">
@@ -425,15 +433,18 @@
               <th style="width:44px">#</th>
               <th>Mã ngành</th>
               <th>Tên ngành</th>
-              <th>Điểm chuẩn TSA 2025</th>
+              <th>ĐC 2023</th>
+              <th>ĐC 2024</th>
+              <th>ĐC 2025</th>
               <th>Chênh lệch</th>
+              <th>Xu hướng</th>
               <th>Khả năng</th>
             </tr>
           </thead>
           <tbody id="hustBody"></tbody>
         </table>
       </div>
-      <p class="hust-note">* Điểm chuẩn năm 2025 — chỉ mang tính tham khảo, năm 2026 có thể thay đổi.</p>
+      <p class="hust-note" id="hustNote">* Điểm chuẩn năm 2025 — chỉ mang tính tham khảo, năm 2026 có thể thay đổi.</p>
     </div>
   </div>
 
@@ -519,8 +530,19 @@
 
   /* HUST section */
   .hust-filter-bar {
-    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;
+    display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 12px;
   }
+  .hust-year-toggle {
+    display: flex; border: 1.5px solid #d0021b; border-radius: 8px; overflow: hidden;
+  }
+  .hust-year-label { font-size: 12px; color: #777; align-self: center; }
+  .hust-year-btn {
+    padding: 6px 14px; border: none; background: #fff; font-size: 12px; font-weight: 600;
+    color: #d0021b; cursor: pointer; transition: all .15s;
+  }
+  .hust-year-btn:not(:last-child) { border-right: 1.5px solid #d0021b; }
+  .hust-year-btn.active { background: #d0021b; color: #fff; }
+  .hust-filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
   .hust-filter-btn {
     padding: 6px 14px; border-radius: 16px; border: 1.5px solid #d9d9d9;
     background: #fff; font-size: 12px; font-weight: 500; color: #555; cursor: pointer;
@@ -536,6 +558,8 @@
   .hust-chip.near { background: #fff8e1; color: #b45309; }
   .hust-chip.fail { background: #fdecea; color: #c0392b; }
   .hust-diff.pos { color: #1e7e34; font-weight: 600; }
+  .hust-spark { text-align: center; width: 90px; }
+  .hust-spark svg { display: block; margin: auto; overflow: visible; }
   .hust-diff.neg { color: #c0392b; font-weight: 600; }
   .hust-diff.zero { color: #b45309; font-weight: 600; }
   .hust-note {
@@ -853,75 +877,98 @@ function renderTable(session, userScore, scores, total) {
 }
 
 // ── HUST 2025 TSA cutoff data ──
+// cut2025/cut2024/cut2023: điểm chuẩn TSA theo năm (null = chưa có dữ liệu)
 const HUST_DATA = [
-  {code:'IT-E10',name:'Khoa học dữ liệu và Trí tuệ nhân tạo (CT tiên tiến)',cut:86.97},
-  {code:'IT1',  name:'CNTT: Khoa học Máy tính',cut:83.39},
-  {code:'IT2',  name:'CNTT: Kỹ thuật Máy tính',cut:79.86},
-  {code:'IT-E15',name:'An toàn không gian số - Cyber Security (CT tiên tiến)',cut:78.49},
-  {code:'IT-E7',name:'Công nghệ thông tin (Global ICT)',cut:78.19},
-  {code:'EE2',  name:'Kỹ thuật Điều khiển - Tự động hoá',cut:76.43},
-  {code:'MS2',  name:'Kỹ thuật Vi điện tử và Công nghệ nano',cut:74.76},
-  {code:'EE-E8',name:'Kỹ thuật Điều khiển - Tự động hoá (CT tiên tiến)',cut:73.86},
-  {code:'ET1',  name:'Kỹ thuật Điện tử - Viễn thông',cut:73.51},
-  {code:'IT-E6',name:'Công nghệ thông tin (Việt - Nhật)',cut:72.81},
-  {code:'ME1',  name:'Kỹ thuật Cơ điện tử',cut:72.32},
-  {code:'ET-E9',name:'Hệ thống nhúng thông minh và IoT (CT tiên tiến)',cut:71.97},
-  {code:'IT-EP',name:'Công nghệ thông tin (Việt - Pháp)',cut:71.83},
-  {code:'MI1',  name:'Toán - Tin',cut:71.62},
-  {code:'MI2',  name:'Hệ thống thông tin quản lý',cut:71.07},
-  {code:'EE1',  name:'Kỹ thuật Điện',cut:69.88},
-  {code:'ET-E4',name:'Kỹ thuật Điện tử - Viễn thông (CT tiên tiến)',cut:69.88},
-  {code:'EE-EP',name:'Tin học công nghiệp và Tự động hoá (PFIEV)',cut:68.73},
-  {code:'FL3',  name:'Tiếng Trung KHKT và Công nghệ',cut:68.14},
-  {code:'TE1',  name:'Kỹ thuật Ô tô',cut:67.74},
-  {code:'ME-E1',name:'Kỹ thuật Cơ điện tử (CT tiên tiến)',cut:66.54},
-  {code:'ET-E16',name:'Truyền thông số và Kỹ thuật đa phương tiện (CT tiên tiến)',cut:66.05},
-  {code:'ME2',  name:'Kỹ thuật Cơ khí',cut:66.05},
-  {code:'TE3',  name:'Kỹ thuật Hàng không',cut:65.97},
-  {code:'EE-E18',name:'Hệ thống điện và năng lượng tái tạo (CT tiên tiến)',cut:65.80},
-  {code:'ET-LUH',name:'Điện tử - Viễn thông - hợp tác ĐH Leibniz Hannover (Đức)',cut:65.76},
-  {code:'EM3',  name:'Quản trị kinh doanh',cut:65.81},
-  {code:'EM5',  name:'Tài chính - Ngân hàng',cut:65.81},
-  {code:'FL1',  name:'Tiếng Anh KHKT và Công nghệ',cut:65.81},
-  {code:'FL2',  name:'Tiếng Anh chuyên nghiệp quốc tế',cut:65.81},
-  {code:'PH1',  name:'Vật lý kỹ thuật',cut:65.19},
-  {code:'ET2',  name:'Kỹ thuật Y sinh',cut:64.82},
-  {code:'EM4',  name:'Kế toán',cut:65.11},
-  {code:'TE2',  name:'Kỹ thuật Cơ khí động lực',cut:64.53},
-  {code:'ME-LUH',name:'Cơ điện tử - hợp tác ĐH Leibniz Hannover (Đức)',cut:64.28},
-  {code:'EM2',  name:'Quản lý công nghiệp',cut:64.15},
-  {code:'TE-EP',name:'Cơ khí hàng không (PFIEV)',cut:62.84},
-  {code:'EM-E14',name:'Logistics và Quản lý chuỗi cung ứng (CT tiên tiến)',cut:63.36},
-  {code:'EM1',  name:'Quản lý năng lượng',cut:63.32},
-  {code:'ME-NUT',name:'Cơ điện tử - hợp tác ĐH Công nghệ Nagaoka (Nhật Bản)',cut:62.18},
-  {code:'ET-E5',name:'Kỹ thuật Y sinh (CT tiên tiến)',cut:61.77},
-  {code:'ED2',  name:'Công nghệ giáo dục',cut:61.66},
-  {code:'ED3',  name:'Quản lý giáo dục',cut:61.25},
-  {code:'HE1',  name:'Kỹ thuật Nhiệt',cut:61.32},
-  {code:'MS1',  name:'Kỹ thuật Vật liệu',cut:60.99},
-  {code:'EM-E13',name:'Phân tích kinh doanh (CT tiên tiến)',cut:60.66},
-  {code:'PH3',  name:'Vật lý Y khoa',cut:60.20},
-  {code:'TE-E2',name:'Kỹ thuật Ô tô (CT tiên tiến)',cut:60.12},
-  {code:'MS3',  name:'Công nghệ vật liệu Polyme và Compozit',cut:60.04},
-  {code:'PH2',  name:'Kỹ thuật hạt nhân',cut:59.68},
-  {code:'ME-GU',name:'Cơ khí - Chế tạo máy - hợp tác ĐH Griffith (Úc)',cut:59.49},
-  {code:'MS5',  name:'Kỹ thuật in',cut:56.88},
-  {code:'CH1',  name:'Kỹ thuật Hoá học',cut:56.86},
-  {code:'MS-E3',name:'Khoa học và kỹ thuật vật liệu (CT tiên tiến)',cut:55.89},
-  {code:'BF2',  name:'Kỹ thuật Thực phẩm',cut:55.05},
-  {code:'CH2',  name:'Hoá học',cut:54.66},
-  {code:'BF1',  name:'Kỹ thuật Sinh học',cut:54.30},
-  {code:'TROY-IT',name:'Khoa học máy tính - hợp tác ĐH Troy (Hoa Kỳ)',cut:54.07},
-  {code:'TX1',  name:'Công nghệ Dệt - May',cut:53.17},
-  {code:'EV1',  name:'Kỹ thuật Môi trường',cut:52.63},
-  {code:'EV2',  name:'Quản lý Tài nguyên và Môi trường',cut:51.19},
-  {code:'CH-E11',name:'Kỹ thuật Hóa dược (CT tiên tiến)',cut:50.88},
-  {code:'BF-E12',name:'Kỹ thuật Thực phẩm (CT tiên tiến)',cut:50.08},
-  {code:'BF-E19',name:'Kỹ thuật sinh học (CT tiên tiến)',cut:47.99},
-  {code:'TROY-BA',name:'Quản trị kinh doanh - hợp tác ĐH Troy (Hoa Kỳ)',cut:46.48},
+  {code:'IT-E10', name:'Khoa học dữ liệu và Trí tuệ nhân tạo (CT tiên tiến)', cut2025:86.97, cut2024:81.60, cut2023:83.97},
+  {code:'IT1',    name:'CNTT: Khoa học Máy tính',                              cut2025:83.39, cut2024:83.82, cut2023:83.90},
+  {code:'IT2',    name:'CNTT: Kỹ thuật Máy tính',                              cut2025:79.86, cut2024:82.08, cut2023:79.22},
+  {code:'IT-E15', name:'An toàn không gian số - Cyber Security (CT tiên tiến)',cut2025:78.49, cut2024:74.88, cut2023:76.61},
+  {code:'IT-E7',  name:'Công nghệ thông tin (Global ICT)',                      cut2025:78.19, cut2024:74.88, cut2023:79.12},
+  {code:'EE2',    name:'Kỹ thuật Điều khiển - Tự động hoá',                    cut2025:76.43, cut2024:73.77, cut2023:72.23},
+  {code:'MS2',    name:'Kỹ thuật Vi điện tử và Công nghệ nano',                cut2025:74.76, cut2024:71.68, cut2023:63.66},
+  {code:'EE-E8',  name:'Kỹ thuật Điều khiển - Tự động hoá (CT tiên tiến)',     cut2025:73.86, cut2024:null,  cut2023:68.74},
+  {code:'ET1',    name:'Kỹ thuật Điện tử - Viễn thông',                        cut2025:73.51, cut2024:68.88, cut2023:66.46},
+  {code:'IT-E6',  name:'Công nghệ thông tin (Việt - Nhật)',                     cut2025:72.81, cut2024:71.05, cut2023:72.03},
+  {code:'ME1',    name:'Kỹ thuật Cơ điện tử',                                  cut2025:72.32, cut2024:68.02, cut2023:65.81},
+  {code:'ET-E9',  name:'Hệ thống nhúng thông minh và IoT (CT tiên tiến)',      cut2025:71.97, cut2024:69.07, cut2023:65.23},
+  {code:'IT-EP',  name:'Công nghệ thông tin (Việt - Pháp)',                     cut2025:71.83, cut2024:70.66, cut2023:69.67},
+  {code:'MI1',    name:'Toán - Tin',                                            cut2025:71.62, cut2024:70.60, cut2023:70.57},
+  {code:'MI2',    name:'Hệ thống thông tin quản lý',                            cut2025:71.07, cut2024:68.45, cut2023:67.29},
+  {code:'EE1',    name:'Kỹ thuật Điện',                                         cut2025:69.88, cut2024:65.25, cut2023:61.27},
+  {code:'ET-E4',  name:'Kỹ thuật Điện tử - Viễn thông (CT tiên tiến)',         cut2025:69.88, cut2024:65.00, cut2023:64.17},
+  {code:'EE-EP',  name:'Tin học công nghiệp và Tự động hoá (PFIEV)',            cut2025:68.73, cut2024:69.13, cut2023:58.29},
+  {code:'FL3',    name:'Tiếng Trung KHKT và Công nghệ',                         cut2025:68.14, cut2024:null,  cut2023:null},
+  {code:'TE1',    name:'Kỹ thuật Ô tô',                                         cut2025:67.74, cut2024:64.36, cut2023:64.28},
+  {code:'ME-E1',  name:'Kỹ thuật Cơ điện tử (CT tiên tiến)',                   cut2025:66.54, cut2024:61.36, cut2023:60.00},
+  {code:'ET-E16', name:'Truyền thông số và Kỹ thuật đa phương tiện (CT tiên tiến)', cut2025:66.05, cut2024:64.98, cut2023:62.72},
+  {code:'ME2',    name:'Kỹ thuật Cơ khí',                                       cut2025:66.05, cut2024:61.36, cut2023:57.23},
+  {code:'TE3',    name:'Kỹ thuật Hàng không',                                   cut2025:65.97, cut2024:62.36, cut2023:60.39},
+  {code:'EE-E18', name:'Hệ thống điện và năng lượng tái tạo (CT tiên tiến)',   cut2025:65.80, cut2024:58.18, cut2023:56.27},
+  {code:'ET-LUH', name:'Điện tử - Viễn thông - hợp tác ĐH Leibniz Hannover (Đức)', cut2025:65.76, cut2024:56.68, cut2023:56.67},
+  {code:'EM3',    name:'Quản trị kinh doanh',                                   cut2025:65.81, cut2024:55.65, cut2023:55.58},
+  {code:'EM5',    name:'Tài chính - Ngân hàng',                                 cut2025:65.81, cut2024:56.17, cut2023:52.45},
+  {code:'FL1',    name:'Tiếng Anh KHKT và Công nghệ',                           cut2025:65.81, cut2024:52.01, cut2023:null},
+  {code:'FL2',    name:'Tiếng Anh chuyên nghiệp quốc tế',                       cut2025:65.81, cut2024:50.29, cut2023:null},
+  {code:'PH1',    name:'Vật lý kỹ thuật',                                        cut2025:65.19, cut2024:56.66, cut2023:54.68},
+  {code:'ET2',    name:'Kỹ thuật Y sinh',                                        cut2025:64.82, cut2024:59.98, cut2023:56.03},
+  {code:'EM4',    name:'Kế toán',                                                cut2025:65.11, cut2024:54.62, cut2023:51.04},
+  {code:'TE2',    name:'Kỹ thuật Cơ khí động lực',                              cut2025:64.53, cut2024:59.89, cut2023:56.41},
+  {code:'ME-LUH', name:'Cơ điện tử - hợp tác ĐH Leibniz Hannover (Đức)',       cut2025:64.28, cut2024:56.53, cut2023:56.08},
+  {code:'EM2',    name:'Quản lý công nghiệp',                                    cut2025:64.15, cut2024:52.68, cut2023:53.55},
+  {code:'TE-EP',  name:'Cơ khí hàng không (PFIEV)',                             cut2025:62.84, cut2024:54.68, cut2023:51.50},
+  {code:'EM-E14', name:'Logistics và Quản lý chuỗi cung ứng (CT tiên tiến)',   cut2025:63.36, cut2024:55.92, cut2023:52.57},
+  {code:'EM1',    name:'Quản lý năng lượng',                                     cut2025:63.32, cut2024:52.68, cut2023:53.29},
+  {code:'ME-NUT', name:'Cơ điện tử - hợp tác ĐH Công nghệ Nagaoka (Nhật Bản)',cut2025:62.18, cut2024:56.19, cut2023:53.95},
+  {code:'ET-E5',  name:'Kỹ thuật Y sinh (CT tiên tiến)',                        cut2025:61.77, cut2024:53.67, cut2023:56.55},
+  {code:'ED2',    name:'Công nghệ giáo dục',                                     cut2025:61.66, cut2024:52.07, cut2023:58.69},
+  {code:'ED3',    name:'Quản lý giáo dục',                                       cut2025:61.25, cut2024:50.29, cut2023:null},
+  {code:'HE1',    name:'Kỹ thuật Nhiệt',                                         cut2025:61.32, cut2024:56.67, cut2023:53.84},
+  {code:'MS1',    name:'Kỹ thuật Vật liệu',                                      cut2025:60.99, cut2024:56.55, cut2023:54.37},
+  {code:'EM-E13', name:'Phân tích kinh doanh (CT tiên tiến)',                   cut2025:60.66, cut2024:53.81, cut2023:51.42},
+  {code:'PH3',    name:'Vật lý Y khoa',                                          cut2025:60.20, cut2024:55.28, cut2023:53.02},
+  {code:'TE-E2',  name:'Kỹ thuật Ô tô (CT tiên tiến)',                          cut2025:60.12, cut2024:60.68, cut2023:57.40},
+  {code:'MS3',    name:'Công nghệ vật liệu Polyme và Compozit',                 cut2025:60.04, cut2024:56.55, cut2023:52.51},
+  {code:'PH2',    name:'Kỹ thuật hạt nhân',                                      cut2025:59.68, cut2024:53.28, cut2023:52.56},
+  {code:'ME-GU',  name:'Cơ khí - Chế tạo máy - hợp tác ĐH Griffith (Úc)',     cut2025:59.49, cut2024:56.19, cut2023:52.45},
+  {code:'MS5',    name:'Kỹ thuật in',                                             cut2025:56.88, cut2024:53.42, cut2023:53.96},
+  {code:'CH1',    name:'Kỹ thuật Hoá học',                                       cut2025:56.86, cut2024:51.85, cut2023:50.60},
+  {code:'MS-E3',  name:'Khoa học và kỹ thuật vật liệu (CT tiên tiến)',          cut2025:55.89, cut2024:52.53, cut2023:50.40},
+  {code:'BF2',    name:'Kỹ thuật Thực phẩm',                                    cut2025:55.05, cut2024:50.29, cut2023:56.05},
+  {code:'CH2',    name:'Hoá học',                                                cut2025:54.66, cut2024:50.29, cut2023:51.58},
+  {code:'BF1',    name:'Kỹ thuật Sinh học',                                      cut2025:54.30, cut2024:50.29, cut2023:51.84},
+  {code:'TROY-IT',name:'Khoa học máy tính - hợp tác ĐH Troy (Hoa Kỳ)',         cut2025:54.07, cut2024:50.29, cut2023:60.12},
+  {code:'TX1',    name:'Công nghệ Dệt - May',                                    cut2025:53.17, cut2024:50.68, cut2023:50.70},
+  {code:'EV1',    name:'Kỹ thuật Môi trường',                                    cut2025:52.63, cut2024:50.72, cut2023:51.12},
+  {code:'EV2',    name:'Quản lý Tài nguyên và Môi trường',                      cut2025:51.19, cut2024:50.33, cut2023:50.60},
+  {code:'CH-E11', name:'Kỹ thuật Hóa dược (CT tiên tiến)',                      cut2025:50.88, cut2024:54.02, cut2023:55.83},
+  {code:'BF-E12', name:'Kỹ thuật Thực phẩm (CT tiên tiến)',                     cut2025:50.08, cut2024:52.55, cut2023:54.80},
+  {code:'BF-E19', name:'Kỹ thuật sinh học (CT tiên tiến)',                       cut2025:47.99, cut2024:50.29, cut2023:52.95},
+  {code:'TROY-BA',name:'Quản trị kinh doanh - hợp tác ĐH Troy (Hoa Kỳ)',       cut2025:46.48, cut2024:50.29, cut2023:51.11},
 ];
 
 let hustFilter = 'all';
+let hustYear = 2025;
+
+function makeSparkline(item) {
+  const pts = [
+    {y: item.cut2023},
+    {y: item.cut2024},
+    {y: item.cut2025},
+  ].filter(p => p.y !== null && p.y !== undefined);
+  if (pts.length < 2) return '<span style="color:#ccc;font-size:11px">—</span>';
+  const W = 72, H = 28, PAD = 4;
+  const vals = pts.map(p => p.y);
+  const minV = Math.min(...vals), maxV = Math.max(...vals);
+  const range = maxV - minV || 1;
+  const coords = pts.map((p, i) => [
+    PAD + (i / (pts.length - 1)) * (W - PAD * 2),
+    PAD + (1 - (p.y - minV) / range) * (H - PAD * 2)
+  ]);
+  const trend = vals[vals.length-1] > vals[0] ? '#1e7e34' : vals[vals.length-1] < vals[0] ? '#c0392b' : '#888';
+  const polyline = coords.map(([x,y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' ');
+  const dots = coords.map(([x,y]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.2" fill="${trend}"/>`).join('');
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><polyline points="${polyline}" fill="none" stroke="${trend}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>${dots}</svg>`;
+}
 
 function renderHUST(userScore) {
   const section = document.getElementById('hustSection');
@@ -931,39 +978,62 @@ function renderHUST(userScore) {
   }
   section.style.display = 'block';
 
-  const sorted = [...HUST_DATA].sort((a, b) => b.cut - a.cut);
+  const cutKey = `cut${hustYear}`;
+  document.getElementById('hustNote').textContent = `* So sánh với điểm chuẩn năm ${hustYear} — chỉ mang tính tham khảo, năm 2026 có thể thay đổi.`;
+
+  const sorted = [...HUST_DATA]
+    .sort((a, b) => {
+      const av = a[cutKey] ?? -1, bv = b[cutKey] ?? -1;
+      return bv - av;
+    });
   const tbody = document.getElementById('hustBody');
   tbody.innerHTML = '';
 
-  sorted.forEach((item, idx) => {
-    const diff = +(userScore - item.cut).toFixed(2);
-    let status, chip, diffClass;
-    if (diff >= 2) {
-      status = 'pass'; chip = 'Có khả năng đỗ'; diffClass = 'pos';
-    } else if (diff >= 0) {
-      status = 'near'; chip = 'Sát điểm chuẩn'; diffClass = 'zero';
-    } else if (diff >= -2) {
-      status = 'near'; chip = 'Sát điểm chuẩn'; diffClass = 'neg';
+  let row = 0;
+  sorted.forEach(item => {
+    const cut = item[cutKey];
+    let status, chip, diffClass, diffStr;
+    if (cut === null || cut === undefined) {
+      status = 'none'; chip = '—'; diffClass = ''; diffStr = '—';
     } else {
-      status = 'fail'; chip = 'Chưa đủ điểm'; diffClass = 'neg';
+      const diff = +(userScore - cut).toFixed(2);
+      diffStr = diff > 0 ? `+${diff.toFixed(2)}` : diff.toFixed(2);
+      if (diff >= 2)       { status = 'pass'; chip = 'Có khả năng đỗ'; diffClass = 'pos'; }
+      else if (diff >= 0)  { status = 'near'; chip = 'Sát điểm chuẩn'; diffClass = 'zero'; }
+      else if (diff >= -2) { status = 'near'; chip = 'Sát điểm chuẩn'; diffClass = 'neg'; }
+      else                 { status = 'fail'; chip = 'Chưa đủ điểm';   diffClass = 'neg'; }
     }
 
     if (hustFilter !== 'all' && hustFilter !== status) return;
-
-    const diffStr = diff > 0 ? `+${diff.toFixed(2)}` : diff.toFixed(2);
+    row++;
+    const cutDisplay = cut != null ? cut.toFixed(2) : '—';
     const tr = document.createElement('tr');
     tr.dataset.status = status;
     tr.innerHTML = `
-      <td>${idx + 1}</td>
+      <td>${row}</td>
       <td><strong>${item.code}</strong></td>
       <td>${item.name}</td>
-      <td>${item.cut.toFixed(2)}</td>
+      <td style="color:${hustYear===2023&&cut!=null?'#d0021b':'inherit'}">${item.cut2023 != null ? item.cut2023.toFixed(2) : '—'}</td>
+      <td style="color:${hustYear===2024&&cut!=null?'#d0021b':'inherit'}">${item.cut2024 != null ? item.cut2024.toFixed(2) : '—'}</td>
+      <td style="color:${hustYear===2025&&cut!=null?'#d0021b':'inherit'}">${item.cut2025 != null ? item.cut2025.toFixed(2) : '—'}</td>
       <td class="hust-diff ${diffClass}">${diffStr}</td>
-      <td><span class="hust-chip ${status}">${chip}</span></td>
+      <td class="hust-spark">${makeSparkline(item)}</td>
+      <td>${status !== 'none' ? `<span class="hust-chip ${status}">${chip}</span>` : '<span style="color:#bbb;font-size:12px">Chưa mở</span>'}</td>
     `;
     tbody.appendChild(tr);
   });
 }
+
+// HUST year toggle
+document.querySelectorAll('.hust-year-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.hust-year-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    hustYear = parseInt(btn.dataset.year);
+    const score = parseFloat(document.getElementById('inputScore').value);
+    renderHUST(score);
+  });
+});
 
 // HUST filter buttons
 document.querySelectorAll('.hust-filter-btn').forEach(btn => {
