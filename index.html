@@ -158,18 +158,26 @@
       border-radius: 12px;
       padding: 20px 24px;
       margin-bottom: 24px;
-      flex-direction: column;
-      gap: 8px;
     }
-    .result-banner.show { display: flex; }
-    .result-line {
-      font-size: 15px;
-      color: #333;
+    .result-banner.show { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+    .result-stat {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
     }
-    .result-line .num {
+    .result-stat .val {
+      font-size: 28px;
       font-weight: 800;
       color: #d0021b;
+      line-height: 1.1;
     }
+    .result-stat .lbl {
+      font-size: 12px;
+      color: #777;
+      margin-top: 4px;
+    }
+    .result-divider { width: 1px; background: #ffd6d6; align-self: stretch; }
+    @media (max-width: 480px) { .result-divider { display: none; } }
 
     /* Section heading */
     .section-head {
@@ -364,9 +372,25 @@
 
   <!-- Result banner -->
   <div class="result-banner" id="resultBanner">
-    <div class="result-line">Tổng số thí sinh có cùng khoảng điểm với bạn: <span class="num" id="resSame">–</span></div>
-    <div class="result-line">Tổng số thí sinh có điểm thấp hơn bạn: <span class="num" id="resBelow">–</span></div>
-    <div class="result-line">Tổng số thí sinh có điểm cao hơn bạn: <span class="num" id="resAbove">–</span></div>
+    <div class="result-stat">
+      <div class="val" id="resScore">–</div>
+      <div class="lbl">Điểm của bạn</div>
+    </div>
+    <div class="result-divider"></div>
+    <div class="result-stat">
+      <div class="val" id="resRank">–</div>
+      <div class="lbl">Xếp hạng ước tính</div>
+    </div>
+    <div class="result-divider"></div>
+    <div class="result-stat">
+      <div class="val" id="resTotal">–</div>
+      <div class="lbl">Tổng thí sinh</div>
+    </div>
+    <div class="result-divider"></div>
+    <div class="result-stat">
+      <div class="val" id="resPercent">–</div>
+      <div class="lbl">Vượt qua (% thí sinh)</div>
+    </div>
   </div>
 
   <!-- Chart -->
@@ -654,13 +678,13 @@ function lookupRank() {
     }
   }
 
-  const sameCount = inRange ? inRange.number : 0;
-  const aboveCount = above;
-  const belowCount = total - above - sameCount;
+  const rank = above + 1;
+  const pct = ((total - rank) / total * 100).toFixed(1);
 
-  document.getElementById('resSame').textContent = fmt(sameCount);
-  document.getElementById('resBelow').textContent = fmt(belowCount);
-  document.getElementById('resAbove').textContent = fmt(aboveCount);
+  document.getElementById('resScore').textContent = scoreVal;
+  document.getElementById('resRank').textContent = fmt(rank);
+  document.getElementById('resTotal').textContent = fmt(total);
+  document.getElementById('resPercent').textContent = pct + '%';
   document.getElementById('resultBanner').classList.add('show');
 
   // scroll to result
