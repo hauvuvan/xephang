@@ -661,30 +661,36 @@ function lookupRank() {
   if (isNaN(scoreVal)) return; // show chart/table without result banner
 
   // ── Rank calculation ──
-  // Count people with strictly higher scores
-  let above = 0;
+  let aboveStrict = 0; // people in ranges strictly above user's score
+  let belowStrict = 0; // people in ranges strictly below user's score
   let inRange = null;
   for (const r of scores) {
     const hi = Math.max(r.from, r.to);
     const lo = Math.min(r.from, r.to);
     if (lo > scoreVal) {
-      above += r.number;
+      aboveStrict += r.number;
+    } else if (hi < scoreVal) {
+      belowStrict += r.number;
     } else if (scoreVal >= lo && scoreVal <= hi) {
       inRange = r;
-      // proportional estimate of people in range who scored higher
-      const rangeWidth = hi - lo || 1;
-      const fraction = (hi - scoreVal) / rangeWidth;
-      above += Math.round(r.number * fraction);
     }
   }
 
-  const rank = above + 1;
   const sameCount = inRange ? inRange.number : 0;
-  const belowCount = total - above - sameCount;
+
+  // Proportional estimate for rank: fraction of inRange people who scored higher
+  let aboveEstimate = aboveStrict;
+  if (inRange) {
+    const hi = Math.max(inRange.from, inRange.to);
+    const lo = Math.min(inRange.from, inRange.to);
+    const rangeWidth = hi - lo || 1;
+    aboveEstimate += Math.round(inRange.number * (hi - scoreVal) / rangeWidth);
+  }
+  const rank = aboveEstimate + 1;
 
   document.getElementById('resSame').textContent = fmt(sameCount);
-  document.getElementById('resBelow').textContent = fmt(belowCount);
-  document.getElementById('resAbove').textContent = fmt(above);
+  document.getElementById('resBelow').textContent = fmt(belowStrict);
+  document.getElementById('resAbove').textContent = fmt(aboveStrict);
   document.getElementById('resRank').textContent = fmt(rank);
   document.getElementById('resultBanner').classList.add('show');
 
