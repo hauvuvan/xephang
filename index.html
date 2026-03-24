@@ -373,23 +373,23 @@
   <!-- Result banner -->
   <div class="result-banner" id="resultBanner">
     <div class="result-stat">
-      <div class="val" id="resScore">–</div>
-      <div class="lbl">Điểm của bạn</div>
+      <div class="val" id="resSame">–</div>
+      <div class="lbl">Cùng khoảng điểm với bạn</div>
+    </div>
+    <div class="result-divider"></div>
+    <div class="result-stat">
+      <div class="val" id="resBelow">–</div>
+      <div class="lbl">Điểm thấp hơn bạn</div>
+    </div>
+    <div class="result-divider"></div>
+    <div class="result-stat">
+      <div class="val" id="resAbove">–</div>
+      <div class="lbl">Điểm cao hơn bạn</div>
     </div>
     <div class="result-divider"></div>
     <div class="result-stat">
       <div class="val" id="resRank">–</div>
-      <div class="lbl">Xếp hạng ước tính</div>
-    </div>
-    <div class="result-divider"></div>
-    <div class="result-stat">
-      <div class="val" id="resTotal">–</div>
-      <div class="lbl">Tổng thí sinh</div>
-    </div>
-    <div class="result-divider"></div>
-    <div class="result-stat">
-      <div class="val" id="resPercent">–</div>
-      <div class="lbl">Vượt qua (% thí sinh)</div>
+      <div class="lbl">Xếp hạng ước tính (tham khảo)</div>
     </div>
   </div>
 
@@ -679,12 +679,13 @@ function lookupRank() {
   }
 
   const rank = above + 1;
-  const pct = ((total - rank) / total * 100).toFixed(1);
+  const sameCount = inRange ? inRange.number : 0;
+  const belowCount = total - above - sameCount;
 
-  document.getElementById('resScore').textContent = scoreVal;
+  document.getElementById('resSame').textContent = fmt(sameCount);
+  document.getElementById('resBelow').textContent = fmt(belowCount);
+  document.getElementById('resAbove').textContent = fmt(above);
   document.getElementById('resRank').textContent = fmt(rank);
-  document.getElementById('resTotal').textContent = fmt(total);
-  document.getElementById('resPercent').textContent = pct + '%';
   document.getElementById('resultBanner').classList.add('show');
 
   // scroll to result
