@@ -899,17 +899,19 @@ function lookupRank() {
   if (isNaN(scoreVal)) return; // show chart/table without result banner
 
   // ── Rank calculation ──
+  // EPS handles scores with more decimal places than range boundaries (e.g. 73.63 falls in gap between 73.6 and 73.7)
+  const EPS = 0.05;
   let aboveStrict = 0; // people in ranges strictly above user's score
   let belowStrict = 0; // people in ranges strictly below user's score
   let inRange = null;
   for (const r of scores) {
     const hi = Math.max(r.from, r.to);
     const lo = Math.min(r.from, r.to);
-    if (lo > scoreVal) {
+    if (lo > scoreVal + EPS) {
       aboveStrict += r.number;
-    } else if (hi < scoreVal) {
+    } else if (hi < scoreVal - EPS) {
       belowStrict += r.number;
-    } else if (scoreVal >= lo && scoreVal <= hi) {
+    } else {
       inRange = r;
     }
   }
@@ -950,7 +952,7 @@ function renderChart(session, userScore, scores) {
   // Highlight bar containing user score
   const bgColors = sortedAsc.map(r => {
     const lo = Math.min(r.from, r.to), hi = Math.max(r.from, r.to);
-    if (!isNaN(userScore) && userScore >= lo && userScore <= hi) return '#d0021b';
+    if (!isNaN(userScore) && userScore >= lo - 0.05 && userScore <= hi + 0.05) return '#d0021b';
     return 'rgba(208, 2, 27, 0.25)';
   });
 
@@ -1007,7 +1009,7 @@ function renderTable(session, userScore, scores, total) {
 
   sortedDesc.forEach((r, i) => {
     const lo = Math.min(r.from, r.to), hi = Math.max(r.from, r.to);
-    const isUserRow = !isNaN(userScore) && userScore >= lo && userScore <= hi;
+    const isUserRow = !isNaN(userScore) && userScore >= lo - 0.05 && userScore <= hi + 0.05;
     const rankFrom = cumulative + 1;
     cumulative += r.number;
     const pct = ((total - cumulative) / total * 100).toFixed(1);
