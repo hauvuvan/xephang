@@ -305,6 +305,80 @@
       margin-bottom: 16px;
       display: none;
     }
+
+    /* ── Mobile responsive ── */
+    @media (max-width: 640px) {
+      /* Header */
+      .header { padding: 0 14px; }
+      .header-inner { height: 48px; gap: 12px; }
+      .logo { font-size: 18px; }
+
+      /* Nav */
+      .method-nav-inner { padding: 0 4px; }
+      .method-tab { padding: 12px 12px; font-size: 13px; }
+      .nav-socials { gap: 2px; padding: 0 4px; }
+      .nav-social-btn { width: 30px; height: 30px; }
+
+      /* Filter section */
+      .filter-section { padding: 20px 14px 28px; }
+      .filter-title { font-size: 19px; }
+      .filter-subtitle { font-size: 13px; margin-bottom: 16px; }
+      .filter-card { padding: 16px; }
+      .filter-row { grid-template-columns: 1fr; gap: 12px; }
+      .btn-search { width: 100%; height: 46px; font-size: 15px; }
+      #tsaExtraFields > div { grid-template-columns: 1fr !important; }
+
+      /* Exam type tabs */
+      .tab-btn { padding: 7px 12px; font-size: 12px; }
+
+      /* Main content */
+      .main { padding: 16px 12px 48px; }
+
+      /* Result banner – 2×2 grid on mobile */
+      .result-banner.show {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 16px;
+      }
+      .result-divider { display: none; }
+      .result-stat { min-width: unset; }
+      .result-stat .val { font-size: 22px; }
+      .result-stat .lbl { font-size: 11px; }
+
+      /* Section head */
+      .section-head { flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+      .section-head h2 { font-size: 15px; }
+      .badge { font-size: 11px; padding: 2px 8px; }
+
+      /* Chart */
+      .chart-wrap { padding: 14px 10px; }
+      .chart-container { height: 220px; }
+
+      /* Tables */
+      thead th { padding: 10px 8px; font-size: 12px; }
+      tbody td { padding: 8px 8px; font-size: 12px; }
+
+      /* HUST section */
+      .hust-filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .hust-year-toggle { flex-wrap: wrap; }
+      .hust-filter-group { flex-wrap: wrap; }
+      .hust-filter-btn { padding: 5px 10px; font-size: 12px; }
+      .hust-year-btn { padding: 5px 12px; font-size: 12px; }
+
+      /* Popup */
+      .popup-box { margin: 12px; padding: 20px 16px; }
+      .popup-title { font-size: 17px; }
+    }
+
+    @media (max-width: 400px) {
+      .result-banner.show { grid-template-columns: 1fr; }
+      .method-tab { font-size: 12px; padding: 11px 10px; }
+    }
   </style>
 </head>
 <body>
@@ -363,6 +437,40 @@
         </div>
         <button class="btn-search" onclick="lookupRank()">Tra cứu</button>
       </div>
+      <!-- TSA extra fields -->
+      <div id="tsaExtraFields" style="display:none;margin-top:14px;border-top:1px solid #f0f0f0;padding-top:14px;">
+        <p style="font-size:12px;color:#888;margin-bottom:10px;">Tùy chọn tính điểm xét tuyển cho BKHN</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+          <div class="filter-group">
+            <label>Chứng chỉ IELTS</label>
+            <select id="selectIELTS">
+              <option value="0">Không có</option>
+              <option value="1">5.0 (+1đ)</option>
+              <option value="2">5.5 (+2đ)</option>
+              <option value="3">6.0 (+3đ)</option>
+              <option value="4">6.5 (+4đ)</option>
+              <option value="5">7.0–9.0 (+5đ)</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Khu vực</label>
+            <select id="selectKV">
+              <option value="0">KV3 (không cộng)</option>
+              <option value="0.75">KV1 (+0.75đ)</option>
+              <option value="0.25">KV2 (+0.25đ)</option>
+              <option value="0.5">KV2 - Nông thôn (+0.5đ)</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Đối tượng ưu tiên</label>
+            <select id="selectDT">
+              <option value="0">Không có</option>
+              <option value="2">Đối tượng 1 (+2đ)</option>
+              <option value="1">Đối tượng 2 (+1đ)</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -379,12 +487,12 @@
     <div class="result-divider"></div>
     <div class="result-stat">
       <div class="val" id="resBelow">–</div>
-      <div class="lbl">Điểm thấp hơn bạn</div>
+      <div class="lbl">Điểm thấp hơn bạn (Khoảng điểm)</div>
     </div>
     <div class="result-divider"></div>
     <div class="result-stat">
       <div class="val" id="resAbove">–</div>
-      <div class="lbl">Điểm cao hơn bạn</div>
+      <div class="lbl">Điểm cao hơn bạn (Khoảng điểm)</div>
     </div>
     <div class="result-divider"></div>
     <div class="result-stat">
@@ -407,9 +515,34 @@
 
   <!-- HUST Admission Chances -->
   <div id="hustSection" style="display:none">
-    <div class="section-head">
+    <div class="section-head" style="flex-wrap:wrap;gap:8px;">
       <h2>Khả năng đỗ ngành BKHN</h2>
       <span class="badge" style="background:#e8f0fe;color:#1a56db">So sánh theo điểm TSA (tham khảo)</span>
+      <span id="hustScoreBadge" style="display:none;background:#fff8e1;color:#e65100;border:1px solid #ffe0b2;border-radius:20px;padding:2px 10px;font-size:12px;font-weight:600;"></span>
+    </div>
+    <!-- Score breakdown card -->
+    <div id="hustScoreCard" style="display:none;background:linear-gradient(135deg,#fff7f7 0%,#fff0f0 100%);border:1.5px solid #ffd6d6;border-radius:12px;padding:16px 24px;margin-bottom:16px;">
+      <div style="display:flex;gap:0;flex-wrap:wrap;align-items:center;">
+        <div style="flex:1;min-width:100px;text-align:center;padding:4px 8px;">
+          <div style="font-size:22px;font-weight:700;color:#555;" id="hscTSA">—</div>
+          <div style="font-size:12px;color:#999;margin-top:3px;">Điểm TSA</div>
+        </div>
+        <div style="color:#ccc;font-size:20px;">+</div>
+        <div style="flex:1;min-width:100px;text-align:center;padding:4px 8px;">
+          <div style="font-size:22px;font-weight:700;color:#555;" id="hscIELTS">—</div>
+          <div style="font-size:12px;color:#999;margin-top:3px;">Điểm thưởng IELTS</div>
+        </div>
+        <div style="color:#ccc;font-size:20px;">+</div>
+        <div style="flex:1;min-width:100px;text-align:center;padding:4px 8px;">
+          <div style="font-size:22px;font-weight:700;color:#555;" id="hscPriority">—</div>
+          <div style="font-size:12px;color:#999;margin-top:3px;">Điểm ưu tiên KV/ĐT</div>
+        </div>
+        <div style="color:#ccc;font-size:20px;">=</div>
+        <div style="flex:1;min-width:120px;text-align:center;background:#d0021b;border-radius:10px;padding:12px 8px;margin-left:4px;">
+          <div style="font-size:28px;font-weight:800;color:#fff;" id="hscFinal">—</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.85);margin-top:3px;">Điểm xét tuyển</div>
+        </div>
+      </div>
     </div>
     <div class="hust-filter-bar">
       <div class="hust-year-toggle">
@@ -682,12 +815,26 @@ RAW_DATA.forEach(d => {
 let currentAdmissionId = 6;
 let chartInstance = null;
 
+// ── TSA adjusted score ──
+function calcAdjustedScore(tsaRaw) {
+  const ieltBonus = parseFloat(document.getElementById('selectIELTS').value) || 0;
+  const kvPoint   = parseFloat(document.getElementById('selectKV').value) || 0;
+  const dtPoint   = parseFloat(document.getElementById('selectDT').value) || 0;
+  const base = tsaRaw + ieltBonus;
+  const totalPri30 = kvPoint + dtPoint;
+  if (totalPri30 === 0) return base;
+  // Scale priority when base > 75
+  const scaleFactor = base < 75 ? 1 : Math.max(0, (100 - base) / 25);
+  return base + totalPri30 * (10 / 3) * scaleFactor;
+}
+
 // ── Tab switching ──
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentAdmissionId = parseInt(btn.dataset.admission);
+    document.getElementById('tsaExtraFields').style.display = currentAdmissionId === 6 ? 'block' : 'none';
     populateSessions();
     clearResults();
   });
@@ -970,13 +1117,35 @@ function makeSparkline(item) {
   return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><polyline points="${polyline}" fill="none" stroke="${trend}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>${dots}</svg>`;
 }
 
-function renderHUST(userScore) {
+function renderHUST(tsaRaw) {
   const section = document.getElementById('hustSection');
-  if (isNaN(userScore) || currentAdmissionId !== 6) {
+  if (isNaN(tsaRaw) || currentAdmissionId !== 6) {
     section.style.display = 'none';
+    document.getElementById('hustScoreCard').style.display = 'none';
     return;
   }
   section.style.display = 'block';
+
+  // Use adjusted score for HUST comparison
+  const ieltBonus = parseFloat(document.getElementById('selectIELTS').value) || 0;
+  const kvPoint   = parseFloat(document.getElementById('selectKV').value) || 0;
+  const dtPoint   = parseFloat(document.getElementById('selectDT').value) || 0;
+  const base = tsaRaw + ieltBonus;
+  const totalPri30 = kvPoint + dtPoint;
+  const scaleFactor = base < 75 ? 1 : Math.max(0, (100 - base) / 25);
+  const priorityPts = totalPri30 * (10 / 3) * scaleFactor;
+  const userScore = base + priorityPts;
+
+  // Score breakdown card
+  const card = document.getElementById('hustScoreCard');
+  card.style.display = 'block';
+  document.getElementById('hscTSA').textContent = tsaRaw.toFixed(2);
+  document.getElementById('hscIELTS').textContent = ieltBonus > 0 ? `+${ieltBonus}` : '0';
+  document.getElementById('hscPriority').textContent = priorityPts > 0 ? `+${priorityPts.toFixed(2)}` : '0';
+  document.getElementById('hscFinal').textContent = userScore.toFixed(2);
+
+  const badge = document.getElementById('hustScoreBadge');
+  badge.style.display = 'none';
 
   const cutKey = `cut${hustYear}`;
   document.getElementById('hustNote').textContent = `* So sánh với điểm chuẩn năm ${hustYear} — chỉ mang tính tham khảo, năm 2026 có thể thay đổi.`;
@@ -1067,6 +1236,7 @@ document.getElementById('popupOverlay').addEventListener('click', function(e) {
 
 // Init
 populateSessions();
+document.getElementById('tsaExtraFields').style.display = 'block';
 </script>
 </body>
 </html>
