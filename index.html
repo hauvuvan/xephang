@@ -503,8 +503,8 @@
       <div class="val" id="resAbove">–</div>
       <div class="lbl">Điểm cao hơn bạn (Khoảng điểm)</div>
     </div>
-    <div class="result-divider"></div>
-    <div class="result-stat">
+    <div class="result-divider" id="rankDivider"></div>
+    <div class="result-stat" id="rankStat">
       <div class="val" id="resRank">–</div>
       <div class="lbl">Xếp hạng ước tính (tham khảo)</div>
     </div>
@@ -604,7 +604,7 @@
               <th>Khoảng điểm</th>
               <th>Số thí sinh</th>
               <th>Cộng dồn (từ cao)</th>
-              <th>Xếp hạng (từ)</th>
+              <th id="rankColHead">Xếp hạng (từ)</th>
               <th>Phần trăm vượt qua</th>
             </tr>
           </thead>
@@ -933,10 +933,14 @@ function lookupRank() {
   }
   const rank = aboveEstimate + 1;
 
+  const showRank = currentAdmissionId === 6;
+  document.getElementById('rankDivider').style.display = showRank ? '' : 'none';
+  document.getElementById('rankStat').style.display = showRank ? '' : 'none';
+
   document.getElementById('resSame').textContent = fmt(sameCount);
   document.getElementById('resBelow').textContent = fmt(belowStrict);
   document.getElementById('resAbove').textContent = fmt(aboveStrict);
-  document.getElementById('resRank').textContent = fmt(rank);
+  if (showRank) document.getElementById('resRank').textContent = fmt(rank);
   document.getElementById('resultBanner').classList.add('show');
 
   // HUST comparison (TSA only)
@@ -1020,6 +1024,9 @@ function renderTable(session, userScore, scores, total) {
   const tbody = document.getElementById('tableBody');
   tbody.innerHTML = '';
 
+  const showRank = currentAdmissionId === 6;
+  document.getElementById('rankColHead').style.display = showRank ? '' : 'none';
+
   // Use foundUserRow flag to highlight only the first (highest) matching range
   // when adjacent ranges share a boundary (to[i] == from[i+1])
   let foundUserRow = false;
@@ -1040,7 +1047,7 @@ function renderTable(session, userScore, scores, total) {
       <td>${scoreLabel}${isUserRow ? '<span class="your-score-marker">Điểm của bạn</span>' : ''}</td>
       <td>${fmt(r.number)}</td>
       <td>${fmt(cumulative)}</td>
-      <td>${fmt(rankFrom)}</td>
+      ${showRank ? `<td>${fmt(rankFrom)}</td>` : ''}
       <td>${pct}%</td>
     `;
     tbody.appendChild(tr);
