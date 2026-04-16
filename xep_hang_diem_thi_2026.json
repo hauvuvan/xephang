@@ -1,4 +1,550 @@
-  [
+[
+  {
+    "id": 21,
+    "admission_id": 5,
+    "name": "HSA đợt 601 - 603 năm 2026",
+    "scores": [
+      {
+        "from": 20,
+        "to": 25,
+        "number": 15
+      },
+      {
+        "from": 25,
+        "to": 30,
+        "number": 18
+      },
+      {
+        "from": 30,
+        "to": 35,
+        "number": 15
+      },
+      {
+        "from": 35,
+        "to": 40,
+        "number": 50
+      },
+      {
+        "from": 40,
+        "to": 45,
+        "number": 244
+      },
+      {
+        "from": 45,
+        "to": 50,
+        "number": 710
+      },
+      {
+        "from": 50,
+        "to": 55,
+        "number": 1770
+      },
+      {
+        "from": 55,
+        "to": 60,
+        "number": 3200
+      },
+      {
+        "from": 60,
+        "to": 65,
+        "number": 4905
+      },
+      {
+        "from": 65,
+        "to": 70,
+        "number": 6105
+      },
+      {
+        "from": 70,
+        "to": 75,
+        "number": 7005
+      },
+      {
+        "from": 75,
+        "to": 80,
+        "number": 7325
+      },
+      {
+        "from": 80,
+        "to": 85,
+        "number": 6761
+      },
+      {
+        "from": 85,
+        "to": 90,
+        "number": 5886
+      },
+      {
+        "from": 90,
+        "to": 95,
+        "number": 4913
+      },
+      {
+        "from": 95,
+        "to": 100,
+        "number": 3443
+      },
+      {
+        "from": 100,
+        "to": 105,
+        "number": 2444
+      },
+      {
+        "from": 105,
+        "to": 110,
+        "number": 1345
+      },
+      {
+        "from": 110,
+        "to": 115,
+        "number": 752
+      },
+      {
+        "from": 115,
+        "to": 120,
+        "number": 252
+      },
+      {
+        "from": 120,
+        "to": 125,
+        "number": 56
+      },
+      {
+        "from": 125,
+        "to": 130,
+        "number": 16
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/diemthi/ts247/images/pho-diem-hsa-2026-dot-1-2-3.png",
+    "status": 1,
+    "created_at": "2026-04-15T10:40:14.000Z",
+    "updated_at": "2026-04-15T10:40:14.000Z",
+    "admission_name": "Điểm ĐGNL HN"
+  },
+  {
+    "id": 22,
+    "admission_id": 2,
+    "name": "Năm 2026 đợt 1",
+    "scores": [
+      {
+        "from": 0,
+        "to": 240,
+        "number": 1
+      },
+      {
+        "from": 241,
+        "to": 260,
+        "number": 67
+      },
+      {
+        "from": 261,
+        "to": 280,
+        "number": 88
+      },
+      {
+        "from": 281,
+        "to": 300,
+        "number": 135
+      },
+      {
+        "from": 301,
+        "to": 320,
+        "number": 206
+      },
+      {
+        "from": 321,
+        "to": 340,
+        "number": 300
+      },
+      {
+        "from": 341,
+        "to": 360,
+        "number": 468
+      },
+      {
+        "from": 361,
+        "to": 380,
+        "number": 683
+      },
+      {
+        "from": 381,
+        "to": 400,
+        "number": 968
+      },
+      {
+        "from": 401,
+        "to": 420,
+        "number": 1397
+      },
+      {
+        "from": 421,
+        "to": 440,
+        "number": 1667
+      },
+      {
+        "from": 441,
+        "to": 460,
+        "number": 2347
+      },
+      {
+        "from": 461,
+        "to": 480,
+        "number": 2968
+      },
+      {
+        "from": 481,
+        "to": 500,
+        "number": 3362
+      },
+      {
+        "from": 501,
+        "to": 520,
+        "number": 3900
+      },
+      {
+        "from": 521,
+        "to": 540,
+        "number": 4664
+      },
+      {
+        "from": 541,
+        "to": 560,
+        "number": 5108
+      },
+      {
+        "from": 561,
+        "to": 580,
+        "number": 5699
+      },
+      {
+        "from": 581,
+        "to": 600,
+        "number": 6018
+      },
+      {
+        "from": 601,
+        "to": 620,
+        "number": 6286
+      },
+      {
+        "from": 621,
+        "to": 640,
+        "number": 6657
+      },
+      {
+        "from": 641,
+        "to": 660,
+        "number": 6828
+      },
+      {
+        "from": 661,
+        "to": 680,
+        "number": 6851
+      },
+      {
+        "from": 681,
+        "to": 700,
+        "number": 6750
+      },
+      {
+        "from": 701,
+        "to": 720,
+        "number": 6674
+      },
+      {
+        "from": 721,
+        "to": 740,
+        "number": 6438
+      },
+      {
+        "from": 741,
+        "to": 760,
+        "number": 6216
+      },
+      {
+        "from": 761,
+        "to": 780,
+        "number": 5802
+      },
+      {
+        "from": 781,
+        "to": 800,
+        "number": 5483
+      },
+      {
+        "from": 801,
+        "to": 820,
+        "number": 5217
+      },
+      {
+        "from": 821,
+        "to": 840,
+        "number": 4831
+      },
+      {
+        "from": 841,
+        "to": 860,
+        "number": 4384
+      },
+      {
+        "from": 861,
+        "to": 880,
+        "number": 3807
+      },
+      {
+        "from": 881,
+        "to": 900,
+        "number": 3210
+      },
+      {
+        "from": 901,
+        "to": 920,
+        "number": 2705
+      },
+      {
+        "from": 921,
+        "to": 940,
+        "number": 1987
+      },
+      {
+        "from": 941,
+        "to": 960,
+        "number": 1365
+      },
+      {
+        "from": 961,
+        "to": 980,
+        "number": 950
+      },
+      {
+        "from": 981,
+        "to": 1000,
+        "number": 610
+      },
+      {
+        "from": 1001,
+        "to": 1020,
+        "number": 290
+      },
+      {
+        "from": 1021,
+        "to": 1040,
+        "number": 90
+      },
+      {
+        "from": 1041,
+        "to": 1060,
+        "number": 10
+      },
+      {
+        "from": 1081,
+        "to": 1100,
+        "number": 1
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/diemthi/ts247/images/xep-hang-vact-2026.png",
+    "status": 1,
+    "created_at": "2026-04-16T07:49:19.000Z",
+    "updated_at": "2026-04-16T08:03:38.000Z",
+    "admission_name": "Điểm ĐGNL HCM"
+  },
+  {
+    "id": 20,
+    "admission_id": 6,
+    "name": "TSA 2026 đợt 2",
+    "scores": [
+      {
+        "from": 26.1,
+        "to": 27.7,
+        "number": 12
+      },
+      {
+        "from": 27.8,
+        "to": 29.4,
+        "number": 12
+      },
+      {
+        "from": 29.5,
+        "to": 31.1,
+        "number": 21
+      },
+      {
+        "from": 31.2,
+        "to": 32.8,
+        "number": 33
+      },
+      {
+        "from": 32.9,
+        "to": 34.5,
+        "number": 38
+      },
+      {
+        "from": 34.6,
+        "to": 36.2,
+        "number": 90
+      },
+      {
+        "from": 36.3,
+        "to": 37.9,
+        "number": 121
+      },
+      {
+        "from": 38,
+        "to": 39.6,
+        "number": 178
+      },
+      {
+        "from": 39.7,
+        "to": 41.3,
+        "number": 253
+      },
+      {
+        "from": 41.4,
+        "to": 43,
+        "number": 412
+      },
+      {
+        "from": 43.1,
+        "to": 44.7,
+        "number": 597
+      },
+      {
+        "from": 44.8,
+        "to": 46.4,
+        "number": 786
+      },
+      {
+        "from": 46.5,
+        "to": 48.1,
+        "number": 1025
+      },
+      {
+        "from": 48.2,
+        "to": 49.8,
+        "number": 1209
+      },
+      {
+        "from": 49.9,
+        "to": 51.5,
+        "number": 1505
+      },
+      {
+        "from": 51.6,
+        "to": 53.2,
+        "number": 1677
+      },
+      {
+        "from": 53.3,
+        "to": 54.9,
+        "number": 1690
+      },
+      {
+        "from": 55,
+        "to": 56.6,
+        "number": 1800
+      },
+      {
+        "from": 56.7,
+        "to": 58.3,
+        "number": 1640
+      },
+      {
+        "from": 58.4,
+        "to": 60,
+        "number": 1513
+      },
+      {
+        "from": 60.1,
+        "to": 61.7,
+        "number": 1292
+      },
+      {
+        "from": 61.8,
+        "to": 63.4,
+        "number": 1106
+      },
+      {
+        "from": 63.5,
+        "to": 65.1,
+        "number": 912
+      },
+      {
+        "from": 65.2,
+        "to": 66.8,
+        "number": 696
+      },
+      {
+        "from": 66.9,
+        "to": 68.5,
+        "number": 554
+      },
+      {
+        "from": 68.6,
+        "to": 70.2,
+        "number": 355
+      },
+      {
+        "from": 70.3,
+        "to": 71.9,
+        "number": 240
+      },
+      {
+        "from": 72,
+        "to": 73.6,
+        "number": 165
+      },
+      {
+        "from": 73.7,
+        "to": 75.3,
+        "number": 97
+      },
+      {
+        "from": 75.4,
+        "to": 77,
+        "number": 75
+      },
+      {
+        "from": 77.1,
+        "to": 78.7,
+        "number": 35
+      },
+      {
+        "from": 78.8,
+        "to": 80.4,
+        "number": 30
+      },
+      {
+        "from": 80.5,
+        "to": 82.1,
+        "number": 15
+      },
+      {
+        "from": 82.2,
+        "to": 83.8,
+        "number": 15
+      },
+      {
+        "from": 83.9,
+        "to": 85.5,
+        "number": 12
+      },
+      {
+        "from": 85.6,
+        "to": 89.9,
+        "number": 10
+      },
+      {
+        "from": 90,
+        "to": 100,
+        "number": 2
+      }
+    ],
+    "image": "https://images.tuyensinh247.com/picture/diemthi/ts247/images/pho-diem-thi-tsa-2026-dot-2.png",
+    "status": 1,
+    "created_at": "2026-03-24T02:11:06.000Z",
+    "updated_at": "2026-03-24T02:15:56.000Z",
+    "admission_name": "Điểm Đánh giá Tư duy"
+  },
   {
     "id": 11,
     "admission_id": 5,
