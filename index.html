@@ -900,19 +900,24 @@ function lookupRank() {
 
   // ── Rank calculation ──
   // EPS handles scores with more decimal places than range boundaries (e.g. 73.63 falls in gap between 73.6 and 73.7)
+  // foundInRange flag prevents double-match when adjacent ranges share a boundary (to[i] == from[i+1])
   const EPS = 0.05;
   let aboveStrict = 0; // people in ranges strictly above user's score
   let belowStrict = 0; // people in ranges strictly below user's score
   let inRange = null;
+  let foundInRange = false;
   for (const r of scores) {
     const hi = Math.max(r.from, r.to);
     const lo = Math.min(r.from, r.to);
-    if (lo > scoreVal + EPS) {
+    if (foundInRange) {
+      belowStrict += r.number;
+    } else if (lo > scoreVal + EPS) {
       aboveStrict += r.number;
     } else if (hi < scoreVal - EPS) {
       belowStrict += r.number;
     } else {
       inRange = r;
+      foundInRange = true;
     }
   }
 
@@ -950,10 +955,18 @@ function renderChart(session, userScore, scores) {
   const values = sortedAsc.map(r => r.number);
 
   // Highlight bar containing user score
-  const bgColors = sortedAsc.map(r => {
+  // Use DESC pass with foundBar flag to correctly pick the first (highest) matching range
+  // when adjacent ranges share a boundary (to[i] == from[i+1])
+  const sortedDescForBar = [...scores].sort((a, b) => b.from - a.from);
+  let foundBar = false;
+  const userRange = !isNaN(userScore) ? sortedDescForBar.find(r => {
+    if (foundBar) return false;
     const lo = Math.min(r.from, r.to), hi = Math.max(r.from, r.to);
-    if (!isNaN(userScore) && userScore >= lo - 0.05 && userScore <= hi + 0.05) return '#d0021b';
-    return 'rgba(208, 2, 27, 0.25)';
+    if (userScore >= lo - 0.05 && userScore <= hi + 0.05) { foundBar = true; return true; }
+    return false;
+  }) : null;
+  const bgColors = sortedAsc.map(r => {
+    return (userRange && r === userRange) ? '#d0021b' : 'rgba(208, 2, 27, 0.25)';
   });
 
   document.getElementById('chartWrap').style.display = 'block';
@@ -1007,9 +1020,13 @@ function renderTable(session, userScore, scores, total) {
   const tbody = document.getElementById('tableBody');
   tbody.innerHTML = '';
 
+  // Use foundUserRow flag to highlight only the first (highest) matching range
+  // when adjacent ranges share a boundary (to[i] == from[i+1])
+  let foundUserRow = false;
   sortedDesc.forEach((r, i) => {
     const lo = Math.min(r.from, r.to), hi = Math.max(r.from, r.to);
-    const isUserRow = !isNaN(userScore) && userScore >= lo - 0.05 && userScore <= hi + 0.05;
+    const isUserRow = !foundUserRow && !isNaN(userScore) && userScore >= lo - 0.05 && userScore <= hi + 0.05;
+    if (isUserRow) foundUserRow = true;
     const rankFrom = cumulative + 1;
     cumulative += r.number;
     const pct = ((total - cumulative) / total * 100).toFixed(1);
